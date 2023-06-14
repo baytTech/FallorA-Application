@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:dio/dio.dart';
 import 'package:fallora/backend/config/app.constants.dart';
 import 'package:fallora/backend/model/birthdate/birth_date_request.dart';
