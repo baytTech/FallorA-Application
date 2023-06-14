@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "237118916916",
+    "firebase_url": "https://fallora-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "fallora",
+    "storage_bucket": "fallora.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237118916916:android:7586b12be8aee50053bd61",
+        "android_client_info": {
+          "package_name": "com.bayttech.fallora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237118916916-ufbe61c3sedta15jqlbuu2m8lm6m5c66.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bayttech.fallora",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "237118916916-4ir1m9koeoeur1f9nh7orrsvkvfqu54p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa3H3NDKNG6AcVedRU7ozKMcLKrCF7LRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237118916916-4ir1m9koeoeur1f9nh7orrsvkvfqu54p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "237118916916-qd7rjjrcb0s6g2bj0bbl8a7ea16ejd2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bayttech.fallora"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
