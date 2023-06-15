@@ -3,7 +3,6 @@ import 'package:fallora/injection.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'backend/config/firebase_config.dart';
@@ -15,10 +14,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupModules();
   await initFirebase();
-
+  
   await FlutterFlowTheme.initialize();
-
-  final appState = FFAppState();
 
   const primaryColor = const Color(0xFF730195);
   EasyLoading.instance
@@ -40,11 +37,7 @@ void main() async {
       statusBarColor: Colors.transparent,
     )
   );
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) => appState,
-      child: MyApp(),
-  ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -68,7 +61,6 @@ class _MyAppState extends State<MyApp> {
     appStateNotifier = AppStateNotifier();
     router = createRouter(appStateNotifier);
     authManager.tokenStream..listen((jwt) {
-      logger.d("updated: $jwt");
       appStateNotifier.updateLoginState(jwt != null);
     });
   }

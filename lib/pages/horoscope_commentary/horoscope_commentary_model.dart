@@ -7,7 +7,6 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HoroscopeCommentaryModel extends FlutterFlowModel {
   FunctionsRepo repo;
@@ -22,14 +21,10 @@ class HoroscopeCommentaryModel extends FlutterFlowModel {
   String comment = "";
 
   void initState(BuildContext context) {
-    var appState = context.read<FFAppState>();
-
     EasyLoading.show(maskType: EasyLoadingMaskType.black);
     repo.getHoroscopeReadings(Gender.Female.code, Horoscope.Gemini.code).then((value) {
         if(value.status == Status.SUCCESS) {   
-          appState.update(() {
-              comment = value.data?.data ?? "";
-           });
+          comment = value.data?.data ?? "";
         }  
         EasyLoading.dismiss();
     });

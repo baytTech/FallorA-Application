@@ -40,8 +40,6 @@ class _HoroscopeSelectionWidgetState extends State<HoroscopeSelectionWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 40.0),
       child: ClipRRect(

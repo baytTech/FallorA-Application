@@ -38,8 +38,6 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return InkWell(
       splashColor: Colors.transparent,
       focusColor: Colors.transparent,

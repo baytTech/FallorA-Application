@@ -83,7 +83,6 @@ class LoginPageModel extends FlutterFlowModel {
     var request = LoginRequest(email: email, password: password);
     FocusScope.of(context).requestFocus(unFocusNode);
     
-    GoRouter.of(context).appState.updateNotifyOnAuthChange(true);
     safeCall(
         apiCall: () => functionsRepo.login(request).then((value) async {
             if (value.message == '{"error":"Email not verified"}') {
@@ -103,7 +102,7 @@ class LoginPageModel extends FlutterFlowModel {
               Future.delayed(const Duration(seconds: 2), () {
                 successDialog.dismiss();
                 authManager.addValidToken(response.data?.idToken);
-                GoRouter.of(context).pushNamed("/HomePage");
+                GoRouter.of(context).push("/HomePage");
               });
               break;
             default:

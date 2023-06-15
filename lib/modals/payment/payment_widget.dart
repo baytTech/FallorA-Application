@@ -38,8 +38,6 @@ class _PaymentWidgetState extends State<PaymentWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return InkWell(
       splashColor: Colors.transparent,
       focusColor: Colors.transparent,
