@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../backend/auth/auth.manager.dart';
 import '../../backend/model/user/user.dart';
 import '../../injection.dart';
+import 'package:fallora/modals/pages/inbox_page/inbox_page_widget.dart';
 
 import 'package:badges/badges.dart' as badges;
 
@@ -99,27 +100,36 @@ class _FalloraAppBarState extends State<FalloraAppBar> {
         ),
       ),
       centerTitle: true,
-      leading: Container(
-        padding: EdgeInsetsDirectional.fromSTEB(20.0, 4.0, 0.0, 0.0),
-        child: badges.Badge(
-          /*badgeContent: Text(
-                '1',
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                    color: Colors.white),
-              ),*/
-          showBadge: false,
-          shape: badges.BadgeShape.circle,
-          badgeColor: Color(0xFFEF393C),
-          elevation: 4.0,
-          padding: EdgeInsetsDirectional.all(8.0),
-          position: badges.BadgePosition.topStart(),
-          animationType: badges.BadgeAnimationType.scale,
-          toAnimate: true,
-          child: Icon(
-            Icons.mail_outlined,
-            color: Colors.white,
-            size: 36.0,
+      leading: GestureDetector(
+        onTap: () async {
+          await Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => InboxPageWidget(),
+            ),
+          );
+        },
+        child: Container(
+          padding: EdgeInsetsDirectional.fromSTEB(20.0, 4.0, 0.0, 0.0),
+          child: badges.Badge(
+            /*badgeContent: Text(
+                  '1',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                      color: Colors.white),
+                ),*/
+            showBadge: false,
+            shape: badges.BadgeShape.circle,
+            badgeColor: Color(0xFFEF393C),
+            elevation: 4.0,
+            padding: EdgeInsetsDirectional.all(8.0),
+            position: badges.BadgePosition.topStart(),
+            animationType: badges.BadgeAnimationType.scale,
+            toAnimate: true,
+            child: Icon(
+              Icons.mail_outlined,
+              color: Colors.white,
+              size: 36.0,
+            ),
           ),
         ),
       ),
