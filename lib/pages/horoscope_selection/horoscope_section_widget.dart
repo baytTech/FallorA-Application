@@ -70,7 +70,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: FalloraAppBar(context: context),
+      appBar: FalloraAppBar(context: context, isHome: false,),
       body: Column(
         children: [
           Expanded(

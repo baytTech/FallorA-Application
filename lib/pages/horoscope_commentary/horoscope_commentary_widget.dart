@@ -44,7 +44,7 @@ class _HoroscopeCommentaryWidgetState extends State<HoroscopeCommentaryWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: FalloraAppBar(context: context),
+      appBar: FalloraAppBar(context: context, isHome: false,),
       body: SafeArea(
         child: Container(
           width: double.infinity,

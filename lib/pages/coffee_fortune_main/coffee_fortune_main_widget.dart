@@ -43,7 +43,7 @@ class _CoffeeFortuneMainWidgetState extends State<CoffeeFortuneMainWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Color(0xFF4E4E4E),
-        appBar: FalloraAppBar(context: context),
+        appBar: FalloraAppBar(context: context, isHome: false,),
         body: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.max,
