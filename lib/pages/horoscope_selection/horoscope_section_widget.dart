@@ -163,7 +163,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                   Padding(
                                     padding: EdgeInsetsDirectional.symmetric(
                                         vertical: 20, horizontal: 12),
-                                    child: Row(
+                                    /*ROOWOWOOWWOWO*/ child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
                                       children: [
@@ -322,212 +322,227 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                           ),
                         ),
                       ),
-                      Container(
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.25,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color(0xFF7C7C7C),
-                              Color(0xFF272727),
-                              Color(0xFF7C7C7C)
-                            ],
-                            stops: [0.0, 0.5, 1.0],
-                            begin: AlignmentDirectional(0.0, -1.0),
-                            end: AlignmentDirectional(0, 1.0),
-                          ),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(30.0),
-                            bottomRight: Radius.circular(30.0),
-                            topLeft: Radius.circular(0.0),
-                            topRight: Radius.circular(0.0),
-                          ),
-                          border: Border.all(color: Colors.white12),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.all(20.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 5.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () {
-                                            selectHoroscopeAndGenderBottomSheet();
-                                          },
-                                          child: Container(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.3,
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.12,
-                                            decoration: BoxDecoration(
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  blurRadius: 5.0,
-                                                  color: Color(0x61000000),
-                                                  offset: Offset(0.0, 3.0),
-                                                )
-                                              ],
-                                              gradient: LinearGradient(
-                                                colors: [
-                                                  Color(0xFF050053),
-                                                  Color(0xFF020209)
-                                                ],
-                                                stops: [0.0, 1.0],
-                                                begin: AlignmentDirectional(
-                                                    0.0, -1.0),
-                                                end: AlignmentDirectional(
-                                                    0, 1.0),
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
-                                        child: Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.3,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.12,
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 5.0,
-                                                color: Color(0x61000000),
-                                                offset: Offset(0.0, 3.0),
-                                              )
-                                            ],
-                                            gradient: LinearGradient(
-                                              colors: [
-                                                Color(0xFFA80093),
-                                                Color(0xFF150014)
-                                              ],
-                                              stops: [0.0, 1.0],
-                                              begin: AlignmentDirectional(
-                                                  0.0, -1.0),
-                                              end: AlignmentDirectional(0, 1.0),
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Image.asset(
-                                                'assets/images/horoscope/gemini_sign.png',
-                                                width: 100.0,
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    0.1,
-                                                fit: BoxFit.fitHeight,
-                                              ),
-                                              Text(
-                                                'Başak Kadını',
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .copyWith(
-                                                        color: AppColors.white),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 5.0, 0.0, 5.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Container(
-                                  width: 130.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        FlutterFlowTheme.of(context).primary,
-                                        FlutterFlowTheme.of(context).secondary
-                                      ],
-                                      stops: [0.0, 1.0],
-                                      begin: AlignmentDirectional(0.0, -1.0),
-                                      end: AlignmentDirectional(0, 1.0),
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.symmetric(
-                                        vertical: 5),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        context.pushNamed(
-                                            'HoroscopeCompatibility');
-                                      },
-                                      text: 'Devamını oku ',
-                                      options: FFButtonOptions(
-                                        width: double.infinity,
-                                        height: double.infinity,
-                                        padding: EdgeInsetsDirectional.zero,
-                                        iconPadding: EdgeInsetsDirectional.zero,
-                                        color: Color(0x00730195),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .copyWith(color: AppColors.white),
-                                        elevation: 2.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      _HoroscopeCompatibilityContainer(context),
                     ],
                   ),
                   Spacer(flex: 2),
                   BackButtonWidget(),
                   Spacer(flex: 1),
                 ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container _HoroscopeCompatibilityContainer(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: MediaQuery.of(context).size.height * 0.25,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFF7C7C7C), Color(0xFF272727), Color(0xFF7C7C7C)],
+          stops: [0.0, 0.5, 1.0],
+          begin: AlignmentDirectional(0.0, -1.0),
+          end: AlignmentDirectional(0, 1.0),
+        ),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(30.0),
+          bottomRight: Radius.circular(30.0),
+          topLeft: Radius.circular(0.0),
+          topRight: Radius.circular(0.0),
+        ),
+        border: Border.all(color: Colors.white12),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: EdgeInsetsDirectional.all(15.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Expanded(
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () {
+                          selectHoroscopeAndGenderBottomSheet();
+                        },
+                        child: _HoroscopeSelectionWidget(),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Expanded(
+                      child: _HoroscopeContainer(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Container(
+                width: 130.0,
+                height: 40.0,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      FlutterFlowTheme.of(context).primary,
+                      FlutterFlowTheme.of(context).secondary
+                    ],
+                    stops: [0.0, 1.0],
+                    begin: AlignmentDirectional(0.0, -1.0),
+                    end: AlignmentDirectional(0, 1.0),
+                  ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.symmetric(vertical: 5),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      context.pushNamed('HoroscopeCompatibility');
+                    },
+                    text: 'Devamını oku ',
+                    options: FFButtonOptions(
+                      width: double.infinity,
+                      height: double.infinity,
+                      padding: EdgeInsetsDirectional.zero,
+                      iconPadding: EdgeInsetsDirectional.zero,
+                      color: Color(0x00730195),
+                      textStyle: FlutterFlowTheme.of(context)
+                          .titleSmall
+                          .copyWith(color: AppColors.white),
+                      elevation: 2.0,
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _HoroscopeSelectionWidget extends StatelessWidget {
+  const _HoroscopeSelectionWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Image.asset(
+        'assets/images/horoscope/gemini_sign.png',
+        width: 30.0,
+        height: MediaQuery.of(context).size.height * 0.1,
+        fit: BoxFit.fitHeight,
+      ),
+      width: MediaQuery.of(context).size.width * 0.3,
+      height: MediaQuery.of(context).size.height * 0.15,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 5.0,
+            color: Color(0x61000000),
+            offset: Offset(0.0, 3.0),
+          )
+        ],
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 52, 52, 52),
+            Color.fromARGB(255, 30, 29, 29)
+          ],
+          stops: [0.0, 1.0],
+          begin: AlignmentDirectional(0.0, -1.0),
+          end: AlignmentDirectional(0, 1.0),
+        ),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+    );
+  }
+}
+
+class _HoroscopeContainer extends StatelessWidget {
+  const _HoroscopeContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.3,
+      height: MediaQuery.of(context).size.height * 0.15,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 5.0,
+            color: Color(0x61000000),
+            offset: Offset(0.0, 3.0),
+          )
+        ],
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 43, 42, 43),
+            Color.fromARGB(255, 25, 25, 25)
+          ],
+          stops: [0.0, 1.0],
+          begin: AlignmentDirectional(0.0, -1.0),
+          end: AlignmentDirectional(0, 1.0),
+        ),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: _HoroscopeContainerColumn(),
+    );
+  }
+}
+
+class _HoroscopeContainerColumn extends StatelessWidget {
+  const _HoroscopeContainerColumn({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(5),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset(
+            'assets/images/horoscope/gemini_sign.png',
+            width: 80.0,
+            height: MediaQuery.of(context).size.height * 0.1,
+            fit: BoxFit.fitHeight,
+          ),
+          Expanded(
+            child: Text(
+              'Başak Kadını',
+              style: GoogleFonts.playfairDisplay(
+                color: Colors.white,
+                fontSize: 15.0,
               ),
             ),
           ),
