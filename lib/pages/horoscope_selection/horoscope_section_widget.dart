@@ -1,3 +1,4 @@
+import 'package:fallora/backend/model/gender/gender.dart';
 import 'package:fallora/backend/model/gender/gender_selectable.dart';
 import 'package:fallora/backend/model/horoscope/horoscope_selectable.dart';
 import 'package:fallora/backend/util/dart_record.dart';
@@ -65,6 +66,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
             context: context, controller: viewModel.horoscopesController)
         .then((value) {
       selectHoroscope();
+      var selectedHoroscope = value?.horoscope;
       return viewModel.commentCubit.setState(value);
     });
   }
@@ -191,6 +193,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                           onTap: () =>
                                               selectHoroscopeBottomSheet(),
                                           child: Container(
+                                            padding: EdgeInsets.only(right: 14),
                                             width: MediaQuery.of(context)
                                                     .size
                                                     .width *
@@ -202,6 +205,8 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
                                                   fit: BoxFit.scaleDown,
+                                                  alignment:
+                                                      Alignment(-0.6, .0),
                                                   image: AssetImage(
                                                       state != null
                                                           ? state.horoscope
@@ -488,11 +493,7 @@ class _HoroscopeSelectionWidget extends StatelessWidget {
     return Container(
       child: ClipOval(
         child: Image.asset(
-          //clipoval eklendi
-          'assets/images/horoscope/question_mark.png', //RESIM hatalı
-          width: 10.0,
-          height: MediaQuery.of(context).size.height * 0.1,
-          fit: BoxFit.fitHeight,
+          'assets/images/question_mark.png',
         ),
       ),
       width: MediaQuery.of(context).size.width * 0.3,
