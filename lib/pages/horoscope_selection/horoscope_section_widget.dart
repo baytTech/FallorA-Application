@@ -28,6 +28,13 @@ class HoroscopeSectionWidget extends StatefulWidget {
 
 class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
   late HoroscopeSectionModel viewModel;
+  bool isSelected = false;
+
+  void selectItem() {
+    setState(() {
+      isSelected = !isSelected;
+    });
+  }
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -52,12 +59,36 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
         .then((value) => viewModel.commentCubit.setState(value));
   }
 
-  Future<DartRecord<GenderSelectableItem, HoroscopeSelectableItem>?>
+  // Future<HoroscopeSelectableItem?> selectHoroscopeBottomSheet() {
+  //   return horoscopeSelectionBottomSheetBuilder(
+  //           context: context, controller: viewModel.horoscopesController)
+  //       .then((value) {
+  //     selectItem();
+  //     return viewModel.commentCubit.setState(
+  //         value); //bottomsheet'ten itemler secildiginde state degiskeni guncellenecek
+  //   });
+  // }  //yorum
+
+  /*Future<DartRecord<GenderSelectableItem, HoroscopeSelectableItem>?>
       selectHoroscopeAndGenderBottomSheet() {
     return horoscopeSelectionExtendedBottomSheetBuilder(
       context: context,
       controller: viewModel.dualController,
     );
+  }*/ //uyum
+
+  Future<DartRecord<GenderSelectableItem, HoroscopeSelectableItem>?>
+      selectHoroscopeAndGenderBottomSheet() {
+    return horoscopeSelectionExtendedBottomSheetBuilder(
+      context: context,
+      controller: viewModel
+          .dualController, //bottomsheet'ten itemler secildiginde state degiskeni guncellenecek
+    ).then((value) {
+      // Seçim yapıldığında selectItem fonksiyonunu çağır
+      selectItem();
+      // Sonuçları kullanabilirsiniz
+      return value;
+    });
   }
 
   @override
@@ -416,6 +447,13 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       context.pushNamed('HoroscopeCompatibility');
+                      //Navigator.pushNamed(context, 'HoroscopeCompatibility', arguments: );
+
+                      isSelected
+                          ? () {
+                              context.pushNamed('HoroscopeCompatibility');
+                            }
+                          : null; //ITEM SECILMIS ISE BUTTON'UN AKTIF PASIFLIGI KONTROL EDILECEK
                     },
                     text: 'Devamını oku ',
                     options: FFButtonOptions(
@@ -426,7 +464,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                       color: Color(0x00730195),
                       textStyle: FlutterFlowTheme.of(context)
                           .titleSmall
-                          .copyWith(color: AppColors.white),
+                          .copyWith(color: isSelected ? AppColors.white : null),
                       elevation: 2.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
@@ -453,11 +491,14 @@ class _HoroscopeSelectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image.asset(
-        'assets/images/horoscope/gemini_sign.png',
-        width: 30.0,
-        height: MediaQuery.of(context).size.height * 0.1,
-        fit: BoxFit.fitHeight,
+      child: ClipOval(
+        child: Image.asset(
+          //clipoval eklendi
+          'assets/images/horoscope/question_mark.png', //RESIM hatalı
+          width: 10.0,
+          height: MediaQuery.of(context).size.height * 0.1,
+          fit: BoxFit.fitHeight,
+        ),
       ),
       width: MediaQuery.of(context).size.width * 0.3,
       height: MediaQuery.of(context).size.height * 0.15,
