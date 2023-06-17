@@ -81,12 +81,9 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
       selectHoroscopeAndGenderBottomSheet() {
     return horoscopeSelectionExtendedBottomSheetBuilder(
       context: context,
-      controller: viewModel
-          .dualController, //bottomsheet'ten itemler secildiginde state degiskeni guncellenecek
+      controller: viewModel.dualController,
     ).then((value) {
-      // Seçim yapıldığında selectItem fonksiyonunu çağır
       selectItem();
-      // Sonuçları kullanabilirsiniz
       return value;
     });
   }
