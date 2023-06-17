@@ -491,9 +491,6 @@ class _HoroscopeSelectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ClipOval(
-        child: Image.asset('assets/images/question_mark.png'),
-      ),
       width: MediaQuery.of(context).size.width * 0.3,
       height: MediaQuery.of(context).size.height * 0.15,
       decoration: BoxDecoration(
@@ -506,7 +503,7 @@ class _HoroscopeSelectionWidget extends StatelessWidget {
         ],
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 52, 52, 52),
+            Color.fromARGB(255, 74, 73, 73),
             Color.fromARGB(255, 30, 29, 29)
           ],
           stops: [0.0, 1.0],
@@ -514,6 +511,28 @@ class _HoroscopeSelectionWidget extends StatelessWidget {
           end: AlignmentDirectional(0, 1.0),
         ),
         borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Container(
+        // padding: EdgeInsets.only(bottom: 10),
+        child: Column(
+          children: [
+            Transform.scale(
+              scale: 0.7,
+              child: Image.asset(
+                'assets/images/question_mark.png',
+              ),
+            ),
+            Expanded(
+              child: Text(
+                'Seciniz',
+                style: GoogleFonts.playfairDisplay(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -574,10 +593,10 @@ class _HoroscopeContainerColumn extends StatelessWidget {
           ),
           Expanded(
             child: Text(
-              'Başak Kadını',
+              'Basak Kadını',
               style: GoogleFonts.playfairDisplay(
                 color: Colors.white,
-                fontSize: 15.0,
+                fontSize: 16.0,
               ),
             ),
           ),
