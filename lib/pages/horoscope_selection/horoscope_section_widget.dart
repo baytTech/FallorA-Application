@@ -33,13 +33,13 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
 
   void selectHoroscope() {
     setState(() {
-      isSelectedHoroscope = !isSelectedHoroscope;
+      isSelectedHoroscope = true;
     });
   }
 
   void selectGender() {
     setState(() {
-      isSelectedGender = !isSelectedGender;
+      isSelectedGender = true;
     });
   }
 
@@ -65,17 +65,9 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
             context: context, controller: viewModel.horoscopesController)
         .then((value) {
       selectHoroscope();
-      viewModel.commentCubit.setState(value);
+      return viewModel.commentCubit.setState(value);
     });
   }
-
-  /*Future<DartRecord<GenderSelectableItem, HoroscopeSelectableItem>?>
-      selectHoroscopeAndGenderBottomSheet() {
-    return horoscopeSelectionExtendedBottomSheetBuilder(
-      context: context,
-      controller: viewModel.dualController,
-    );
-  }*/ //uyum
 
   Future<DartRecord<GenderSelectableItem, HoroscopeSelectableItem>?>
       selectHoroscopeAndGenderBottomSheet() {
@@ -191,7 +183,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                   Padding(
                                     padding: EdgeInsetsDirectional.symmetric(
                                         vertical: 20, horizontal: 12),
-                                    /*ROOWOWOOWWOWO*/ child: Row(
+                                    child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
                                       children: [
@@ -448,11 +440,13 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                   padding: EdgeInsetsDirectional.symmetric(vertical: 5),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      //Navigator.pushNamed(context, 'HoroscopeCompatibility', arguments: );
+
                       isSelectedGender
                           ? () {
                               context.pushNamed('HoroscopeCompatibility');
                             }
-                          : null;
+                          : null; //ITEM SECILMIS ISE BUTTON'UN AKTIF PASIFLIGI KONTROL EDILECEK
                     },
                     text: 'Devamını oku ',
                     options: FFButtonOptions(
@@ -461,10 +455,11 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                       padding: EdgeInsetsDirectional.zero,
                       iconPadding: EdgeInsetsDirectional.zero,
                       color: Color(0x00730195),
-                      textStyle: FlutterFlowTheme.of(context)
-                          .titleSmall
-                          .copyWith(
-                              color: isSelectedGender ? AppColors.white : null),
+                      textStyle: FlutterFlowTheme.of(context).titleSmall.copyWith(
+                          color: isSelectedGender
+                              ? AppColors.white
+                              : null), //BUTTON PASIFKEN YANI ITEM SECILMEMISKEN RENGINI NULL ATIYOR
+
                       elevation: 2.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
