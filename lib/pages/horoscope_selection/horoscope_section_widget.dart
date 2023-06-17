@@ -215,7 +215,8 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                               boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 5.0,
-                                                  color: Color(0x9D000000),
+                                                  color: Color.fromARGB(
+                                                      157, 31, 30, 30),
                                                   offset: Offset(0.0, 3.0),
                                                 )
                                               ],
@@ -272,12 +273,8 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                                   0.0, 5.0, 0.0, 5.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              isSelectedHoroscope
-                                                  ? () {
-                                                      context.pushNamed(
-                                                          'HoroscopeCommentary');
-                                                    }
-                                                  : null;
+                                              context.pushNamed(
+                                                  'HoroscopeCommentary');
                                             },
                                             text: 'Devamını Oku',
                                             options: FFButtonOptions(
@@ -288,13 +285,12 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                               iconPadding:
                                                   EdgeInsetsDirectional.zero,
                                               color: Color(0x00730195),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .copyWith(
-                                                      color: isSelectedHoroscope
-                                                          ? AppColors.white
-                                                          : null),
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .copyWith(
+                                                          color:
+                                                              AppColors.white),
                                               elevation: 2.0,
                                               borderSide: BorderSide(
                                                 color: Colors.transparent,
@@ -445,13 +441,10 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                   padding: EdgeInsetsDirectional.symmetric(vertical: 5),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      //Navigator.pushNamed(context, 'HoroscopeCompatibility', arguments: );
-
-                      isSelectedGender
-                          ? () {
-                              context.pushNamed('HoroscopeCompatibility');
-                            }
-                          : null; //ITEM SECILMIS ISE BUTTON'UN AKTIF PASIFLIGI KONTROL EDILECEK
+                      isSelectedGender = true;
+                      if (isSelectedGender) {
+                        context.pushNamed('HoroscopeCompatibility');
+                      }
                     },
                     text: 'Devamını oku ',
                     options: FFButtonOptions(
@@ -460,11 +453,10 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                       padding: EdgeInsetsDirectional.zero,
                       iconPadding: EdgeInsetsDirectional.zero,
                       color: Color(0x00730195),
-                      textStyle: FlutterFlowTheme.of(context).titleSmall.copyWith(
-                          color: isSelectedGender
-                              ? AppColors.white
-                              : null), //BUTTON PASIFKEN YANI ITEM SECILMEMISKEN RENGINI NULL ATIYOR
-
+                      textStyle: FlutterFlowTheme.of(context)
+                          .titleSmall
+                          .copyWith(
+                              color: isSelectedGender ? AppColors.white : null),
                       elevation: 2.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
@@ -513,7 +505,6 @@ class _HoroscopeSelectionWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: Container(
-        // padding: EdgeInsets.only(bottom: 10),
         child: Column(
           children: [
             Transform.scale(
