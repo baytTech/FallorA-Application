@@ -492,9 +492,7 @@ class _HoroscopeSelectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ClipOval(
-        child: Image.asset(
-          'assets/images/question_mark.png',
-        ),
+        child: Image.asset('assets/images/question_mark.png'),
       ),
       width: MediaQuery.of(context).size.width * 0.3,
       height: MediaQuery.of(context).size.height * 0.15,
