@@ -1,3 +1,5 @@
+import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
+
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -48,163 +50,16 @@ class _HoroscopeCompatibilityWidgetState
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: responsiveVisibility(
+        appBar: FalloraAppBar(
           context: context,
-          desktop: false,
-        )
-            ? PreferredSize(
-                preferredSize:
-                    Size.fromHeight(MediaQuery.of(context).size.height * 0.09),
-                child: AppBar(
-                  backgroundColor: Color(0x00FFFFFF),
-                  automaticallyImplyLeading: false,
-                  actions: [],
-                  flexibleSpace: FlexibleSpaceBar(
-                    background: Container(
-                      width: MediaQuery.of(context).size.width * 0.26,
-                      height: MediaQuery.of(context).size.height * 0.11,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Color(0xFF40113B), Color(0xFF730195)],
-                          stops: [0.0, 1.0],
-                          begin: AlignmentDirectional(0.0, -1.0),
-                          end: AlignmentDirectional(0, 1.0),
-                        ),
-                      ),
-                      child: Visibility(
-                        visible: responsiveVisibility(
-                          context: context,
-                          desktop: false,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  25.0, 0.0, 45.0, 0.0),
-                              child: badges.Badge(
-                                badgeContent: Text(
-                                  '1',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .bodyMediumFamily,
-                                        color: Colors.white,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily),
-                                      ),
-                                ),
-                                showBadge: true,
-                                shape: badges.BadgeShape.circle,
-                                badgeColor: Color(0xFFEF393C),
-                                elevation: 4.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 8.0, 8.0, 8.0),
-                                position: badges.BadgePosition.topStart(),
-                                animationType: badges.BadgeAnimationType.scale,
-                                toAnimate: true,
-                                child: Icon(
-                                  Icons.mail_outlined,
-                                  color: Colors.white,
-                                  size: 36.0,
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'HomePage',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Image.asset(
-                                    'assets/images/Fallora.png',
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.5,
-                                    height: MediaQuery.of(context).size.height *
-                                        0.1,
-                                    fit: BoxFit.contain,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 0.0, 5.0, 0.0),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.19,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.06,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF2B022B),
-                                  borderRadius: BorderRadius.circular(15.0),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
-                                      child: FaIcon(
-                                        FontAwesomeIcons.solidStar,
-                                        color: Color(0xFFFFBC00),
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          3.0, 0.0, 0.0, 5.0),
-                                      child: AutoSizeText(
-                                        '9999',
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Playfair Display',
-                                              color: Colors.white,
-                                              fontSize: 20.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  centerTitle: false,
-                  elevation: 0.0,
-                ),
-              )
-            : null,
+          isHome: false,
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF31113B),
+              Color(0xFF258195),
+            ],
+          ),
+        ),
         body: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -565,7 +420,8 @@ class _HoroscopeCompatibilityWidgetState
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 10.0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                20.0, 20.0, 20.0, 10.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(30.0),
                               child: Container(
@@ -651,66 +507,6 @@ class _HoroscopeCompatibilityWidgetState
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 50.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.safePop();
-                            },
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 10.0,
-                              shape: const CircleBorder(),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.15,
-                                height:
-                                    MediaQuery.of(context).size.width * 0.15,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color: Color(0x33000000),
-                                      offset: Offset(0.0, 2.0),
-                                    )
-                                  ],
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      FlutterFlowTheme.of(context).primary,
-                                      FlutterFlowTheme.of(context).secondary
-                                    ],
-                                    stops: [0.0, 1.0],
-                                    begin: AlignmentDirectional(0.0, -1.0),
-                                    end: AlignmentDirectional(0, 1.0),
-                                  ),
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 3.0,
-                                  ),
-                                ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.safePop();
-                                  },
-                                  child: Icon(
-                                    Icons.arrow_back_ios_outlined,
-                                    color: Colors.white,
-                                    size: 24.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
@@ -722,7 +518,6 @@ class _HoroscopeCompatibilityWidgetState
     );
   }
 }
-
 
 class CompatibilityIndicator extends StatelessWidget {
   final double percentage;

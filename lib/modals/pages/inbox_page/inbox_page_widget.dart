@@ -174,7 +174,6 @@ class _InboxPageWidgetState extends State<InboxPageWidget> {
                   ],
                 ),
               ),
-              BackButtonWidget()
             ],
           ),
         ),
