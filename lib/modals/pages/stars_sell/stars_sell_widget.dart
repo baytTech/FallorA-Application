@@ -1,3 +1,5 @@
+import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
+
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -53,149 +55,12 @@ class _StarsSellWidgetState extends State<StarsSellWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Color(0xFFBB38FF),
-        appBar: responsiveVisibility(
+        appBar: FalloraAppBar(
           context: context,
-          desktop: false,
-        )
-            ? PreferredSize(
-                preferredSize:
-                    Size.fromHeight(MediaQuery.of(context).size.height * 0.09),
-                child: AppBar(
-                  backgroundColor: Color(0x00FFFFFF),
-                  automaticallyImplyLeading: false,
-                  actions: [],
-                  flexibleSpace: FlexibleSpaceBar(
-                    background: Container(
-                      width: MediaQuery.of(context).size.width * 0.26,
-                      height: MediaQuery.of(context).size.height * 0.11,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Color(0xFF40113B), Color(0xFF730195)],
-                          stops: [0.0, 1.0],
-                          begin: AlignmentDirectional(0.0, -1.0),
-                          end: AlignmentDirectional(0, 1.0),
-                        ),
-                      ),
-                      child: Visibility(
-                        visible: responsiveVisibility(
-                          context: context,
-                          desktop: false,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  25.0, 0.0, 45.0, 0.0),
-                              child: badges.Badge(
-                                badgeContent: Text(
-                                  '1',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .bodyMediumFamily,
-                                        color: Colors.white,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily),
-                                      ),
-                                ),
-                                showBadge: true,
-                                shape: badges.BadgeShape.circle,
-                                badgeColor: Color(0xFFEF393C),
-                                elevation: 4.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 8.0, 8.0, 8.0),
-                                position: badges.BadgePosition.topStart(),
-                                animationType: badges.BadgeAnimationType.scale,
-                                toAnimate: true,
-                                child: Icon(
-                                  Icons.mail_outlined,
-                                  color: Colors.white,
-                                  size: 36.0,
-                                ),
-                              ),
-                            ),
-                            if (responsiveVisibility(
-                              context: context,
-                              desktop: false,
-                            ))
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 10.0, 0.0),
-                                  child: Image.asset(
-                                    'assets/images/Fallora_narrow.png',
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.5,
-                                    height: MediaQuery.of(context).size.height *
-                                        0.1,
-                                    fit: BoxFit.contain,
-                                  ),
-                                ),
-                              ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 0.0, 5.0, 0.0),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.19,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.06,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF2B022B),
-                                  borderRadius: BorderRadius.circular(15.0),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
-                                      child: FaIcon(
-                                        FontAwesomeIcons.solidStar,
-                                        color: Color(0xFFFFBC00),
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          3.0, 0.0, 0.0, 5.0),
-                                      child: AutoSizeText(
-                                        '9999',
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Playfair Display',
-                                              color: Colors.white,
-                                              fontSize: 20.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  centerTitle: false,
-                  elevation: 0.0,
-                ),
-              )
-            : null,
+          isHome: false,
+          gradient:
+              LinearGradient(colors: [Color(0xFF31113B), Color(0xFF258195)]),
+        ),
         body: SafeArea(
           child: Visibility(
             visible: responsiveVisibility(
@@ -758,7 +623,7 @@ class _StarsSellWidgetState extends State<StarsSellWidget> {
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
+                                                  MainAxisAlignment.spaceBetween,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.stretch,
                                               children: [
@@ -798,156 +663,142 @@ class _StarsSellWidgetState extends State<StarsSellWidget> {
                                                         ),
                                                   ),
                                                 ),
-                                                Column(
+                                                Container(
+                                                  width:
+                                                  double.infinity,
+                                                  child:
+                                                  Slider.adaptive(
+                                                    activeColor:
+                                                    FlutterFlowTheme.of(
+                                                        context)
+                                                        .primary,
+                                                    inactiveColor:
+                                                    FlutterFlowTheme.of(
+                                                        context)
+                                                        .accent2,
+                                                    min: 11.0,
+                                                    max: 99.0,
+                                                    value: _model
+                                                        .sliderValue ??=
+                                                    11.0,
+                                                    label: _model
+                                                        .sliderValue
+                                                        .toString(),
+                                                    divisions: 88,
+                                                    onChanged:
+                                                        (newValue) {
+                                                      newValue = double
+                                                          .parse(newValue
+                                                          .toStringAsFixed(
+                                                          6));
+                                                      setState(() =>
+                                                      _model.sliderValue =
+                                                          newValue);
+                                                    },
+                                                  ),
+                                                ),
+                                                Row(
+                                                  crossAxisAlignment: CrossAxisAlignment.center ,
                                                   mainAxisSize:
-                                                      MainAxisSize.max,
+                                                  MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceAround,
                                                   children: [
-                                                    Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Container(
-                                                          width:
-                                                              double.infinity,
-                                                          child:
-                                                              Slider.adaptive(
-                                                            activeColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                            inactiveColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .accent2,
-                                                            min: 11.0,
-                                                            max: 99.0,
-                                                            value: _model
-                                                                    .sliderValue ??=
-                                                                11.0,
-                                                            label: _model
-                                                                .sliderValue
-                                                                .toString(),
-                                                            divisions: 88,
-                                                            onChanged:
-                                                                (newValue) {
-                                                              newValue = double
-                                                                  .parse(newValue
-                                                                      .toStringAsFixed(
-                                                                          6));
-                                                              setState(() =>
-                                                                  _model.sliderValue =
-                                                                      newValue);
-                                                            },
+                                                    Expanded(
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 55.0,
+                                                        decoration:
+                                                        BoxDecoration(
+                                                          image:
+                                                          DecorationImage(
+                                                            fit: BoxFit.fitHeight,
+                                                            image: Image
+                                                                .asset(
+                                                              'assets/images/star.png',
+                                                            ).image,
                                                           ),
                                                         ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceAround,
-                                                          children: [
-                                                            Container(
-                                                              width: 100.0,
-                                                              height: 100.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                image:
-                                                                    DecorationImage(
-                                                                  fit: BoxFit
-                                                                      .fitWidth,
-                                                                  image: Image
-                                                                      .asset(
-                                                                    'assets/images/star.png',
-                                                                  ).image,
-                                                                ),
-                                                              ),
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      0.0, 0.5),
-                                                              child: Text(
-                                                                _model
-                                                                    .sliderValue
-                                                                    .toString(),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      color: Colors
-                                                                          .white,
-                                                                      fontSize:
-                                                                          49.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                            RichText(
-                                                              text: TextSpan(
-                                                                children: [
-                                                                  TextSpan(
-                                                                    text: _model
-                                                                        .sliderValue
-                                                                        .toString(),
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          30.0,
-                                                                    ),
-                                                                  ),
-                                                                  TextSpan(
-                                                                    text: '\n',
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w300,
-                                                                      fontSize:
-                                                                          22.0,
-                                                                    ),
-                                                                  ),
-                                                                  TextSpan(
-                                                                    text:
-                                                                        'Yıldız',
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          22.0,
-                                                                    ),
-                                                                  )
-                                                                ],
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      color: Colors
-                                                                          .white,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                      lineHeight:
-                                                                          1.3,
-                                                                    ),
-                                                              ),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                            ),
-                                                          ],
+                                                        alignment: Alignment.center,
+                                                        child: Text(
+                                                          _model
+                                                              .sliderValue
+                                                              .toString(),
+                                                          style: FlutterFlowTheme.of(
+                                                              context)
+                                                              .bodyMedium
+                                                              .override(
+                                                            fontFamily:
+                                                            FlutterFlowTheme.of(context)
+                                                                .bodyMediumFamily,
+                                                            color: Colors
+                                                                .white,
+                                                            fontSize:
+                                                            20.0,
+                                                            useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                                .containsKey(
+                                                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                          ),
                                                         ),
-                                                      ],
+                                                      ),
+                                                    ),
+                                                    Expanded(
+                                                      child: RichText(
+                                                        text: TextSpan(
+                                                          children: [
+                                                            TextSpan(
+                                                              text: _model
+                                                                  .sliderValue?.toInt().toString(),
+                                                              style:
+                                                              TextStyle(
+                                                                fontSize:
+                                                                30.0,
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text: '\n',
+                                                              style:
+                                                              TextStyle(
+                                                                fontWeight:
+                                                                FontWeight
+                                                                    .w300,
+                                                                fontSize:
+                                                                22.0,
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text:
+                                                              'Yıldız',
+                                                              style:
+                                                              TextStyle(
+                                                                fontSize:
+                                                                22.0,
+                                                              ),
+                                                            )
+                                                          ],
+                                                          style: FlutterFlowTheme.of(
+                                                              context)
+                                                              .bodyMedium
+                                                              .override(
+                                                            fontFamily:
+                                                            FlutterFlowTheme.of(context)
+                                                                .bodyMediumFamily,
+                                                            color: Colors
+                                                                .white,
+                                                            useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                                .containsKey(
+                                                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                            lineHeight:
+                                                            1.3,
+                                                          ),
+                                                        ),
+                                                        textAlign:
+                                                        TextAlign
+                                                            .center,
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -958,7 +809,7 @@ class _StarsSellWidgetState extends State<StarsSellWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 10.0, 10.0, 10.0),
+                                                  10.0, 0.0, 10.0, 10.0),
                                           child: FFButtonWidget(
                                             onPressed: () {
                                               print('Button pressed ...');

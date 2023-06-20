@@ -38,7 +38,7 @@ class _TarotPageWidgetState extends State<TarotPageWidget> {
 
     return Scaffold(
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-      appBar: FalloraAppBar(context: context),
+      appBar: FalloraAppBar(context: context, isHome: false,),
       body: SafeArea(
         child: Container(
           width: double.infinity,

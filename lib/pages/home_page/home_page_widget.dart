@@ -37,7 +37,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       onTap: () => FocusScope.of(context).requestFocus(unfocusNode),
       child: Scaffold(
         backgroundColor: Color(0xFF4E4E4E),
-        appBar: FalloraAppBar(context: context),
+        appBar: FalloraAppBar(
+          isHome: true,
+          context: context,
+          gradient: LinearGradient(
+            colors: [Color(0xFF31113B), Color(0xFF258195)],
+          ),
+        ),
         body: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
@@ -63,7 +69,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -100,14 +107,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('HoroscopeSection',
+                          context.pushNamed(
+                            'HoroscopeSection',
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
@@ -141,9 +150,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
                       child: InkWell(
-                        onTap: (){
+                        onTap: () {
                           GoRouter.of(context).push("/tarotPage");
                         },
                         child: Container(
@@ -168,7 +178,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 text: "TAROT",
                                 padding: EdgeInsetsDirectional.only(start: 12),
                                 alignment: AlignmentDirectional(0.1, 0.9),
-                              ),                              
+                              ),
                             ],
                           ),
                         ),
@@ -193,7 +203,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     context: context,
                     builder: (bottomSheetContext) {
                       return GestureDetector(
-                        onTap: () => FocusScope.of(context).requestFocus(unfocusNode),
+                        onTap: () =>
+                            FocusScope.of(context).requestFocus(unfocusNode),
                         child: Padding(
                           padding: MediaQuery.of(bottomSheetContext).viewInsets,
                           child: Container(

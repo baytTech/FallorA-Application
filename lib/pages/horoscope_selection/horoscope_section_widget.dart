@@ -87,7 +87,12 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: FalloraAppBar(context: context),
+      appBar: FalloraAppBar(
+        context: context,
+        isHome: false,
+        gradient:
+            LinearGradient(colors: [Color(0xFF31113B), Color(0xFF258195)]),
+      ),
       body: Column(
         children: [
           Expanded(
