@@ -17,6 +17,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'cubit/compatibility.cubit.dart';
 import 'horoscope_section_model.dart';
 export 'horoscope_section_model.dart';
 
@@ -353,7 +354,13 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                           ),
                         ),
                       ),
-                      _HoroscopeCompatibilityContainer(context),
+                      BlocBuilder<HoroscopeCompatibilityCubit,
+                              HoroscopeSelectableItem?>(
+                          bloc: viewModel.compatibilityCubitLeft,
+                          builder: (context, state) {
+                            return _HoroscopeCompatibilityContainer(
+                                context, state);
+                          })
                     ],
                   ),
                   Spacer(flex: 2),
@@ -368,7 +375,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
     );
   }
 
-  Container _HoroscopeCompatibilityContainer(BuildContext context) {
+  Container _HoroscopeCompatibilityContainer(BuildContext context, state) {
     return Container(
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.25,

@@ -1,3 +1,6 @@
+import '../../backend/model/gender/gender_selectable.dart';
+import '../../backend/model/horoscope/horoscope_selectable.dart';
+import '../horoscope_selection/seletable_items_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -12,10 +15,14 @@ import 'package:provider/provider.dart';
 class HoroscopeCompatibilityModel extends FlutterFlowModel {
   /// Initialization and disposal methods.
 
+  final horoscopesController =
+      SelectableItemController(HoroscopeSelectableItem.generate());
+  final dualController = DualSelectableItemController(
+      GenderSelectableItem.generate(), HoroscopeSelectableItem.generate());
+
   void initState(BuildContext context) {}
 
   void dispose() {}
 
   /// Additional helper methods are added here.
-
 }
