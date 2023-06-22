@@ -446,7 +446,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                   padding: EdgeInsetsDirectional.symmetric(vertical: 5),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      isSelectedGender = true;
+                      //isSelectedGender = true;
                       if (isSelectedGender) {
                         context.pushNamed('HoroscopeCompatibility');
                       }
