@@ -1,5 +1,12 @@
+import 'package:fallora/backend/util/horoscope_util.dart';
+import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
 import 'package:fallora/widgets/userprofilewidget/auth_user_stream_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../backend/auth/auth.manager.dart';
+import '../../../backend/auth/user.cubit.dart';
+import '../../../backend/model/user/user.dart';
+import '../../../injection.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -23,6 +30,7 @@ class UserProfileWidget extends StatefulWidget {
 
 class _UserProfileWidgetState extends State<UserProfileWidget> {
   late UserProfileModel _model;
+  late AuthManager authManager = getIt<AuthManager>();
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -44,151 +52,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: responsiveVisibility(
-        context: context,
-        desktop: false,
-      )
-          ? PreferredSize(
-              preferredSize:
-                  Size.fromHeight(MediaQuery.of(context).size.height * 0.09),
-              child: AppBar(
-                backgroundColor: Color(0x00FFFFFF),
-                automaticallyImplyLeading: false,
-                actions: [],
-                flexibleSpace: FlexibleSpaceBar(
-                  background: Container(
-                    width: MediaQuery.of(context).size.width * 0.26,
-                    height: MediaQuery.of(context).size.height * 0.11,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFF40113B), Color(0xFF730795)],
-                        stops: [0.0, 1.0],
-                        begin: AlignmentDirectional(0.0, -1.0),
-                        end: AlignmentDirectional(0, 1.0),
-                      ),
-                    ),
-                    child: Visibility(
-                      visible: responsiveVisibility(
-                        context: context,
-                        desktop: false,
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                25.0, 0.0, 45.0, 0.0),
-                            child: badges.Badge(
-                              badgeContent: Text(
-                                '1',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      color: Colors.white,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
-                              ),
-                              showBadge: true,
-                              shape: badges.BadgeShape.circle,
-                              badgeColor: Color(0xFFEF393C),
-                              elevation: 4.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 8.0, 8.0, 8.0),
-                              position: badges.BadgePosition.topStart(),
-                              animationType: badges.BadgeAnimationType.scale,
-                              toAnimate: true,
-                              child: Icon(
-                                Icons.mail_outlined,
-                                color: Colors.white,
-                                size: 36.0,
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 10.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed('HomePage');
-                                },
-                                child: Image.asset(
-                                  'assets/images/Fallora.png',
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.5,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.1,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                5.0, 0.0, 10.0, 0.0),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.19,
-                              height: MediaQuery.of(context).size.height * 0.06,
-                              decoration: BoxDecoration(
-                                color: Color(0xFF2B022B),
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 0.0, 0.0),
-                                    child: FaIcon(
-                                      FontAwesomeIcons.solidStar,
-                                      color: Color(0xFFFFBC00),
-                                      size: 24.0,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        3.0, 0.0, 0.0, 5.0),
-                                    child: AutoSizeText(
-                                      '9999',
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Playfair Display',
-                                            color: Colors.white,
-                                            fontSize: 18.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                centerTitle: false,
-                elevation: 0.0,
-              ),
-            )
-          : null,
+      appBar: FalloraAppBar(context: context, isHome: false),
       body: Container(
         width: MediaQuery.of(context).size.width * 1.0,
         height: MediaQuery.of(context).size.height * 1.0,
@@ -318,7 +182,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                                       blurHash:
                                                                           m.blurHash,
                                                                     ))
-                                                                .toList();                                                           
+                                                                .toList();
                                                       } finally {
                                                         _model.isDataUploading =
                                                             false;
@@ -420,26 +284,36 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => Text(
-                                        "currentUserDisplayName",
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .override(
-                                              fontFamily: 'Playfair Display',
-                                              color: Colors.white,
-                                              fontSize: 24.0,
-                                              fontWeight: FontWeight.bold,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displaySmallFamily),
+                                    child: BlocBuilder<UserCubic, User?>(
+                                        bloc: authManager.userCubic,
+                                        builder: (context, state) {
+                                          if (state == null) return Container();
+                                          return Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    3.0, 0.0, 10.0, 5.0),
+                                            child: Center(
+                                              child: Text(
+                                                "${state.fullName}",
+                                                maxLines: 1,
+                                                style:
+                                          FlutterFlowTheme.of(context)
+                                              .displaySmall
+                                              .override(
+                                          fontFamily: 'Playfair Display',
+                                          color: Colors.white,
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.bold,
+                                          useGoogleFonts: GoogleFonts
+                                              .asMap()
+                                              .containsKey(
+                                          FlutterFlowTheme.of(
+                                          context)
+                                              .displaySmallFamily),
+                                              ),
                                             ),
-                                      ),
-                                    ),
+                                          ),);
+                                        }),
                                   ),
                                 ),
                               ],
@@ -454,21 +328,22 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
-                                      child: Text(
-                                        '[Zodiac Sign]',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Playfair Display',
-                                              color: Colors.white,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmallFamily),
-                                            ),
-                                      ),
+                                      child: BlocBuilder<UserCubic, User?>(
+                                          bloc: authManager.userCubic,
+                                          builder: (context, state) {
+                                            if (state == null) return Container();
+                                            return Padding(
+                                              padding: EdgeInsetsDirectional.fromSTEB(
+                                                  3.0, 0.0, 10.0, 5.0),
+                                              child:
+                                              Text("${HoroscopeUtil.horoscopeFromTimeMillis(state.birthDate!).description}",
+                                                  maxLines: 1,
+                                                  style: GoogleFonts.playfairDisplay(
+                                                    color: Colors.white,
+                                                    fontSize: 18,
+                                                  )),
+                                            );
+                                          }),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -670,7 +545,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              30.0, 0.0, 30.0, 0.0),
+                              30.0, 0.0, 30.0, 20.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               GoRouter.of(context).prepareAuthEvent();
@@ -688,60 +563,6 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).secondary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Noto Sans',
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    letterSpacing: 2.0,
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodySmallFamily),
-                                  ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 0.0,
-                              ),
-                              borderRadius: BorderRadius.circular(0.0),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 20.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              30.0, 0.0, 30.0, 0.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              GoRouter.of(context).prepareAuthEvent();
-                              //await authManager.signOut();
-                              GoRouter.of(context).clearRedirectLocation();
-
-                              context.goNamedAuth('LoginPage', mounted);
-                            },
-                            text: 'HESAP SİL',
-                            options: FFButtonOptions(
-                              width: double.infinity,
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
