@@ -26,43 +26,54 @@ class _MyAvatarsPageState extends State<MyAvatarsPage> {
           colors: [Color(0xFF31113B), Color(0xFF258195)],
         ),
       ),
-      body: Column(
-        children: [
-          _avatarlarimTextContainer(),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return InkWell(
-                  splashColor: Colors.black26,
-                  onTap: () {},
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Ink.image(
-                        image: NetworkImage(""),
-                        height: 200,
-                        width: 200,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 6),
-                      Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(15),
-                                bottomRight: Radius.circular(15),
-                              ),
-                              color: Color.fromARGB(255, 114, 37, 122)),
-                          child: Row(children: [Text("Satın al"), Text("5*")])),
-                      SizedBox(height: 6)
-                    ],
-                  ),
-                );
-              },
+      body: Container(
+        color: Color.fromARGB(255, 69, 67, 67),
+        child: Column(
+          children: [
+            _avatarlarimTextContainer(),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return _CardWidget();
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+    );
+  }
+}
+
+class _CardWidget extends StatelessWidget {
+  const _CardWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    var buttonText = "Satın al";
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Ink.image(
+          image: NetworkImage(""),
+          height: 250,
+          width: 200,
+          fit: BoxFit.cover,
+        ),
+        SizedBox(height: 6),
+        InkWell(
+          onTap: () {},
+          child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  color: Color.fromARGB(255, 114, 37, 122)),
+              child: Row(children: [Text(buttonText), Text("5*")])),
+        ),
+        SizedBox(height: 6)
+      ],
     );
   }
 }
