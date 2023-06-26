@@ -65,18 +65,13 @@ class _SendCoffeeCupWidgetState extends State<SendCoffeeCupWidget> {
       appBar: FalloraAppBar(
         context: context,
         isHome: false,
-        gradient: LinearGradient(colors: [Color(0xFF31113B), Color(0xFF258195)]),
+        gradient: AppColors.appBarGradiet,
       ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFF4E4E4E), Color(0xFF181818), Color(0xFF4E4E4E)],
-            stops: [0.0, 0.5, 1.0],
-            begin: AlignmentDirectional(0.0, -1.0),
-            end: AlignmentDirectional(0, 1.0),
-          ),
+          gradient: AppColors.pageGradient
         ),
         child: Column(
           mainAxisSize: MainAxisSize.max,

@@ -150,6 +150,9 @@ class _FalloraAppBarState extends State<FalloraAppBar> {
           width: MediaQuery.of(context).size.width * 0.26,
           height: appbarHeight,
           decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(color: Colors.white30)
+            ),
             gradient: widget.gradient ??
                 LinearGradient(
                   colors: [Color(0xFF40113B), Color(0xFF730195)],

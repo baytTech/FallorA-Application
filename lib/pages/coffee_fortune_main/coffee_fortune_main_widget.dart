@@ -1,3 +1,4 @@
+import 'package:fallora/res/color.res.dart';
 import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
 import 'package:fallora/widgets/menulabel/MenuLabel.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
@@ -43,7 +44,11 @@ class _CoffeeFortuneMainWidgetState extends State<CoffeeFortuneMainWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Color(0xFF4E4E4E),
-        appBar: FalloraAppBar(context: context, isHome: false, gradient: LinearGradient(colors: [Color(0xFF31113B), Color(0xFF258195)]),),
+        appBar: FalloraAppBar(
+          context: context, 
+          isHome: false, 
+          gradient: AppColors.appBarGradiet
+        ),
         body: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -52,18 +57,7 @@ class _CoffeeFortuneMainWidgetState extends State<CoffeeFortuneMainWidget> {
               Expanded(
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Color(0xFF4E4E4E),
-                        Color(0xFF181818),
-                        Color(0xFF4E4E4E)
-                      ],
-                      stops: [0.0, 0.5, 1.0],
-                      begin: AlignmentDirectional(0.0, -1.0),
-                      end: AlignmentDirectional(0, 1.0),
-                    ),
-                  ),
+                  decoration: BoxDecoration(gradient: AppColors.pageGradient),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

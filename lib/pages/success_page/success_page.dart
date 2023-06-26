@@ -29,8 +29,7 @@ class SuccessPage extends StatelessWidget {
         Scaffold(
             backgroundColor: AppColors.transparent,
             appBar: PreferredSize(
-              preferredSize:
-                  Size.fromHeight(MediaQuery.of(context).size.height * 0.12),
+              preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.12),
               child: AppBar(
                 systemOverlayStyle: SystemUiOverlayStyle.light,
                 backgroundColor: Color(0x00FFFFFF),

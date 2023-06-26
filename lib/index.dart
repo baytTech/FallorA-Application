@@ -1,7 +1,6 @@
 // Export pages
 export 'pages/splash_page/splash_screen_widget.dart'
     show SplashScreenWidget;
-export 'pages/main_page/main_page_widget.dart' show MainPageWidget;
 export 'pages/login_page/login_page_widget.dart' show LoginPageWidget;
 export 'pages/home_page/home_page_widget.dart' show HomePageWidget;
 export '/modals/pages/inbox_page/inbox_page_widget.dart' show InboxPageWidget;
