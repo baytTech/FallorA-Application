@@ -31,11 +31,31 @@ class _MyAvatarsPageState extends State<MyAvatarsPage> {
           _avatarlarimTextContainer(),
           Expanded(
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: 3,
               itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    title: Text('Öğe $index'),
+                return InkWell(
+                  splashColor: Colors.black26,
+                  onTap: () {},
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Ink.image(
+                        image: NetworkImage(""),
+                        height: 200,
+                        width: 200,
+                        fit: BoxFit.cover,
+                      ),
+                      SizedBox(height: 6),
+                      Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(15),
+                                bottomRight: Radius.circular(15),
+                              ),
+                              color: Color.fromARGB(255, 114, 37, 122)),
+                          child: Row(children: [Text("Satın al"), Text("5*")])),
+                      SizedBox(height: 6)
+                    ],
                   ),
                 );
               },
@@ -59,11 +79,18 @@ class _avatarlarimTextContainer extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 200,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(15),
-          bottomRight: Radius.circular(15),
-        ),
-      ),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15),
+            bottomRight: Radius.circular(15),
+          ),
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Color.fromARGB(255, 35, 9, 34),
+              Color.fromARGB(255, 181, 42, 185),
+            ],
+          )),
       child: Text(
         avatarlarimText,
         style: GoogleFonts.playfairDisplay(
