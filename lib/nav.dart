@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:fallora/modals/pages/avatar_buy/avatar_buy_widget.dart';
 import 'package:fallora/pages/otp_page/otp_page_widget.dart';
 import 'package:fallora/pages/success_page/success_page.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, _) => appStateNotifier.loggedIn ? HomePageWidget() : LoginPageWidget(),
+      errorBuilder: (context, _) =>
+          appStateNotifier.loggedIn ? HomePageWidget() : LoginPageWidget(),
       routes: [
         FFRoute(
             name: '_initialize',
@@ -180,7 +182,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AvatarBuy',
           path: '/avatarBuy',
-          builder: (context, params) => AvatarBuyWidget(),
+          builder: (context, params) => MyAvatarsPage(),
         ),
         FFRoute(
           name: 'DrinkBehalf',
