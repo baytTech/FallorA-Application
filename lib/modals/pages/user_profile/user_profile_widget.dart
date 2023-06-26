@@ -172,7 +172,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                                                       blurHash:
                                                                           m.blurHash,
                                                                     ))
-                                                                .toList();                                                           
+                                                                .toList();
                                                       } finally {
                                                         _model.isDataUploading =
                                                             false;
@@ -431,21 +431,26 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Avatarlarım',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Playfair Display',
-                                              color: Colors.white,
-                                              fontSize: 20.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
+                                      child: InkWell(
+                                        onTap: () {
+                                          context.pushNamed('AvatarBuy');
+                                        },
+                                        child: Text(
+                                          'Avatarlarım',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Playfair Display',
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
+                                        ),
                                       ),
                                     ),
                                   ],
