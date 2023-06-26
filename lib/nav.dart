@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:fallora/modals/pages/avatar_buy/avatar_buy_widget.dart';
+import 'package:fallora/domain/model/generic_success_model.dart';
+import 'package:fallora/pages/genetic_success/generic_success_screen.dart';
 import 'package:fallora/pages/otp_page/otp_page_widget.dart';
 import 'package:fallora/pages/success_page/success_page.dart';
 import 'package:flutter/material.dart';
@@ -62,15 +64,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : LoginPageWidget(),
+      errorBuilder: (context, _) => appStateNotifier.loggedIn ? HomePageWidget() : LoginPageWidget(),
       routes: [
         FFRoute(
             name: '_initialize',
             path: '/',
             builder: (context, _) => appStateNotifier.loggedIn
                 ? HomePageWidget()
-                : LoginPageWidget()),
+                : LoginPageWidget()
+        ),
+        FFRoute(
+            name: "GenericSuccessScreen",
+            path: "/GenericSuccessScreen",
+            builder: (_, __) => GenericSuccessScreen(pageModel: GenericSuccessModel.forTarot())
+        ),
         FFRoute(
             name: "SuccessPage",
             path: "/SuccessPage",
@@ -87,11 +94,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               var email = params.state.extraMap["email"];
               return OtpPageWidget(email: email.toString());
             }),
-        FFRoute(
-          name: 'MainPage',
-          path: '/mainPage',
-          builder: (context, params) => MainPageWidget(),
-        ),
         FFRoute(
           name: 'LoginPage',
           path: '/loginPage',

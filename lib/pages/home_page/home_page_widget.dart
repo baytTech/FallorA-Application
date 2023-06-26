@@ -1,3 +1,4 @@
+import 'package:fallora/res/color.res.dart';
 import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
 import 'package:fallora/widgets/menulabel/MenuLabel.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -36,7 +37,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(unfocusNode),
       child: Scaffold(
-        backgroundColor: Color(0xFF4E4E4E),
+        backgroundColor: AppColors.pageGradient.colors.first,
         appBar: FalloraAppBar(
           shimmerEnabled: true,
           shimmeringDurationAsSeconds: 10,
@@ -52,32 +53,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           children: [
             Expanded(
               child: Container(
-                width: MediaQuery.of(context).size.width * 1.0,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xFF4E4E4E),
-                      Color(0xFF181818),
-                      Color(0xFF4E4E4E)
-                    ],
-                    stops: [0.0, 0.5, 1.0],
-                    begin: AlignmentDirectional(0.0, -1.0),
-                    end: AlignmentDirectional(0, 1.0),
-                  ),
-                ),
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(gradient: AppColors.pageGradient),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
+                      padding:EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
                       child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
                         onTap: () => context.pushNamed('CoffeeFortuneMain'),
                         child: Container(
                           width: double.infinity,
@@ -87,6 +72,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               fit: BoxFit.cover,
                               image: AssetImage('assets/images/coffee_2.png'),
                             ),
+                            border: Border.all(color: Colors.white24),
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(15.0),
                               bottomRight: Radius.circular(15.0),
@@ -109,8 +95,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
+                      padding:EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -136,6 +121,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               image: AssetImage('assets/images/horoscope.png'),
                             ),
                             borderRadius: BorderRadius.circular(15.0),
+                            border: Border.all(color: Colors.white24)
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -152,12 +138,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 5.0),
                       child: InkWell(
-                        onTap: () {
-                          GoRouter.of(context).push("/tarotPage");
-                        },
+                        onTap: () => GoRouter.of(context).push("/tarotPage"),
                         child: Container(
                           width: double.infinity,
                           height: MediaQuery.of(context).size.height * 0.15,
@@ -172,6 +155,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               topLeft: Radius.circular(15.0),
                               topRight: Radius.circular(15.0),
                             ),
+                            border: Border.all(color: Colors.white24),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -193,10 +177,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             Align(
               alignment: AlignmentDirectional(0.0, 0.0),
               child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
                 onTap: () async {
                   await showModalBottomSheet(
                     isScrollControlled: true,

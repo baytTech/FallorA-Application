@@ -54,9 +54,9 @@ class _OtpPageWidgetState extends State<OtpPageWidget> {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage('assets/images/a_mystical_woman_with_horns_drinks_turkish_coffee_2.png'),
-             ),
+                fit: BoxFit.cover,
+                image: AssetImage('assets/images/a_mystical_woman_with_horns_drinks_turkish_coffee_2.png'),
+              ),
           )
         ),
         SafeArea(
