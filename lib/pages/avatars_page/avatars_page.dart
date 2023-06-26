@@ -94,7 +94,7 @@ class _avatarlarimTextContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var avatarlarimText = "avatarlarim";
+    var avatarlarimText = "Avatarlarım";
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 110,
@@ -117,10 +117,10 @@ class _avatarlarimTextContainer extends StatelessWidget {
           child: Text(
             avatarlarimText,
             style: GoogleFonts.playfairDisplay(
-              color: Colors.white,
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic),
           ),
         ),
       ),
