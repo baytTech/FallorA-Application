@@ -57,22 +57,31 @@ class _CardWidget extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Ink.image(
-          image: NetworkImage(""),
-          height: 250,
-          width: 200,
-          fit: BoxFit.cover,
-        ),
-        SizedBox(height: 6),
+        Container(
+            width: 150, child: Image.network("https://picsum.photos/200/300")),
         InkWell(
           onTap: () {},
           child: Container(
+              height: 40,
+              width: 150,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(15),
+                      bottomRight: Radius.circular(15)),
                   color: Color.fromARGB(255, 114, 37, 122)),
-              child: Row(children: [Text(buttonText), Text("5*")])),
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Text(buttonText),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Text("5*"),
+                )
+              ])),
         ),
-        SizedBox(height: 6)
+        SizedBox(height: 40)
       ],
     );
   }
@@ -88,26 +97,31 @@ class _avatarlarimTextContainer extends StatelessWidget {
     var avatarlarimText = "avatarlarim";
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 200,
+      height: 110,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(15),
             bottomRight: Radius.circular(15),
           ),
           gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [
               Color.fromARGB(255, 35, 9, 34),
               Color.fromARGB(255, 181, 42, 185),
             ],
           )),
-      child: Text(
-        avatarlarimText,
-        style: GoogleFonts.playfairDisplay(
-          color: Colors.white,
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 30),
+        child: Center(
+          child: Text(
+            avatarlarimText,
+            style: GoogleFonts.playfairDisplay(
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
     );
