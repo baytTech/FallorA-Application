@@ -38,6 +38,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       child: Scaffold(
         backgroundColor: Color(0xFF4E4E4E),
         appBar: FalloraAppBar(
+          shimmerEnabled: true,
+          shimmeringDurationAsSeconds: 10,
           isHome: true,
           context: context,
           gradient: LinearGradient(
