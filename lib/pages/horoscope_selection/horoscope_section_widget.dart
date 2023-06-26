@@ -354,6 +354,147 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                         ),
                       ),
                       _HoroscopeCompatibilityContainer(context),
+                      // SingleChildScrollView(
+                      //   child: BlocBuilder<HoroscopeCompatibilityCubit,
+                      //       HoroscopeCompatibilityState>(
+                      //     builder: (context, state) {
+                      //       bloc:
+                      //       viewModel.compatibilityCubit;
+                      //       return Container(
+                      //         width: double.infinity,
+                      //         height: MediaQuery.of(context).size.height * 0.25,
+                      //         decoration: BoxDecoration(
+                      //           gradient: LinearGradient(
+                      //             colors: [
+                      //               Color(0xFF7C7C7C),
+                      //               Color(0xFF272727),
+                      //               Color(0xFF7C7C7C)
+                      //             ],
+                      //             stops: [0.0, 0.5, 1.0],
+                      //             begin: AlignmentDirectional(0.0, -1.0),
+                      //             end: AlignmentDirectional(0, 1.0),
+                      //           ),
+                      //           borderRadius: BorderRadius.only(
+                      //             bottomLeft: Radius.circular(30.0),
+                      //             bottomRight: Radius.circular(30.0),
+                      //             topLeft: Radius.circular(0.0),
+                      //             topRight: Radius.circular(0.0),
+                      //           ),
+                      //           border: Border.all(color: Colors.white12),
+                      //         ),
+                      //         child: Column(
+                      //           mainAxisSize: MainAxisSize.min,
+                      //           mainAxisAlignment:
+                      //               MainAxisAlignment.spaceEvenly,
+                      //           children: [
+                      //             Expanded(
+                      //               child: Padding(
+                      //                 padding: EdgeInsetsDirectional.all(15.0),
+                      //                 child: Row(
+                      //                   mainAxisSize: MainAxisSize.max,
+                      //                   mainAxisAlignment:
+                      //                       MainAxisAlignment.center,
+                      //                   children: [
+                      //                     Padding(
+                      //                       padding: const EdgeInsets.symmetric(
+                      //                           horizontal: 15),
+                      //                       child: Expanded(
+                      //                         child: InkWell(
+                      //                           splashColor: Colors.transparent,
+                      //                           focusColor: Colors.transparent,
+                      //                           hoverColor: Colors.transparent,
+                      //                           highlightColor:
+                      //                               Colors.transparent,
+                      //                           onTap: () {
+                      //                             selectHoroscopeAndGenderBottomSheet();
+                      //                           },
+                      //                           child:
+                      //                               _HoroscopeSelectionWidget(),
+                      //                         ),
+                      //                       ),
+                      //                     ),
+                      //                     Padding(
+                      //                       padding: const EdgeInsets.symmetric(
+                      //                           horizontal: 15),
+                      //                       child: Expanded(
+                      //                         child: _HoroscopeContainer(),
+                      //                       ),
+                      //                     ),
+                      //                   ],
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //             Padding(
+                      //               padding: EdgeInsetsDirectional.fromSTEB(
+                      //                   0.0, 5.0, 0.0, 5.0),
+                      //               child: ClipRRect(
+                      //                 borderRadius: BorderRadius.circular(8.0),
+                      //                 child: Container(
+                      //                   width: 130.0,
+                      //                   height: 40.0,
+                      //                   decoration: BoxDecoration(
+                      //                     gradient: LinearGradient(
+                      //                       colors: [
+                      //                         FlutterFlowTheme.of(context)
+                      //                             .primary,
+                      //                         FlutterFlowTheme.of(context)
+                      //                             .secondary
+                      //                       ],
+                      //                       stops: [0.0, 1.0],
+                      //                       begin:
+                      //                           AlignmentDirectional(0.0, -1.0),
+                      //                       end: AlignmentDirectional(0, 1.0),
+                      //                     ),
+                      //                     borderRadius:
+                      //                         BorderRadius.circular(8.0),
+                      //                   ),
+                      //                   child: Padding(
+                      //                     padding:
+                      //                         EdgeInsetsDirectional.symmetric(
+                      //                             vertical: 5),
+                      //                     child: FFButtonWidget(
+                      //                       onPressed: () async {
+                      //                         //isSelectedGender = true;
+                      //                         if (isSelectedGender) {
+                      //                           context.pushNamed(
+                      //                               'HoroscopeCompatibility');
+                      //                         }
+                      //                       },
+                      //                       text: 'Devamını oku ',
+                      //                       options: FFButtonOptions(
+                      //                         width: double.infinity,
+                      //                         height: double.infinity,
+                      //                         padding:
+                      //                             EdgeInsetsDirectional.zero,
+                      //                         iconPadding:
+                      //                             EdgeInsetsDirectional.zero,
+                      //                         color: Color(0x00730195),
+                      //                         textStyle: FlutterFlowTheme.of(
+                      //                                 context)
+                      //                             .titleSmall
+                      //                             .copyWith(
+                      //                                 color: isSelectedGender
+                      //                                     ? AppColors.white
+                      //                                     : null),
+                      //                         elevation: 2.0,
+                      //                         borderSide: BorderSide(
+                      //                           color: Colors.transparent,
+                      //                           width: 1.0,
+                      //                         ),
+                      //                         borderRadius:
+                      //                             BorderRadius.circular(8.0),
+                      //                       ),
+                      //                     ),
+                      //                   ),
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ],
+                      //         ),
+                      //       );
+                      //     },
+                      //   ),
+                      // ),
                     ],
                   ),
                   Spacer(flex: 2),
