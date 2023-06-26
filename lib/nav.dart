@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:fallora/modals/pages/avatar_buy/avatar_buy_widget.dart';
 import 'package:fallora/domain/model/generic_success_model.dart';
 import 'package:fallora/pages/genetic_success/generic_success_screen.dart';
 import 'package:fallora/pages/otp_page/otp_page_widget.dart';
@@ -183,7 +184,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AvatarBuy',
           path: '/avatarBuy',
-          builder: (context, params) => AvatarBuyWidget(),
+          builder: (context, params) => MyAvatarsPage(),
         ),
         FFRoute(
           name: 'DrinkBehalf',

@@ -4,6 +4,7 @@ import 'package:fallora/backend/model/horoscope/horoscope_selectable.dart';
 import 'package:fallora/backend/util/dart_record.dart';
 import 'package:fallora/injection.dart';
 import 'package:fallora/pages/horoscope_selection/cubit/comment.cubit.dart';
+import 'package:fallora/pages/horoscope_selection/cubit/compatibility.cubit.dart';
 import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
 import 'package:fallora/widgets/back_button_widget.dart';
 import 'package:fallora/widgets/bottomsheet/horoscope_selection_bottom_sheet.dart';
@@ -235,7 +236,6 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                             ),
                                           ),
                                         ),
-                                        //_Expanded(viewModel: viewModel),  //SILINECEK
                                       ],
                                     ),
                                   ),
@@ -437,7 +437,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                   padding: EdgeInsetsDirectional.symmetric(vertical: 5),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      isSelectedGender = true;
+                      //isSelectedGender = true;
                       if (isSelectedGender) {
                         context.pushNamed('HoroscopeCompatibility');
                       }
@@ -517,7 +517,7 @@ class _HoroscopeSelectionWidget extends StatelessWidget {
                   fontSize: 16.0,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
