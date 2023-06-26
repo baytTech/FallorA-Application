@@ -19,35 +19,35 @@ class HoroscopeSectionModel extends FlutterFlowModel {
   FunctionsRepo functionsRepo;
   AuthManager authManager;
 
-  HoroscopeSectionModel({
-    required this.functionsRepo,
-    required this.authManager
-  });
+  HoroscopeSectionModel(
+      {required this.functionsRepo, required this.authManager});
 
-  final horoscopesController = SelectableItemController(HoroscopeSelectableItem.generate());
-  final dualController = DualSelectableItemController(GenderSelectableItem.generate(), HoroscopeSelectableItem.generate());
+  final horoscopesController =
+      SelectableItemController(HoroscopeSelectableItem.generate());
+  final dualController = DualSelectableItemController(
+      GenderSelectableItem.generate(), HoroscopeSelectableItem.generate());
   final commentCubit = HoroscopeCommentCubit();
+  final compatibilityCubit = HoroscopeCommentCubit();
 
   void initState(BuildContext context) {
     var user = authManager.userCubic.state;
-    if(user?.birthDate == null) {
-        SchedulerBinding.instance.addPostFrameCallback((_) => 
+    if (user?.birthDate == null) {
+      SchedulerBinding.instance.addPostFrameCallback((_) =>
           showDialog<Horoscope>(
-            barrierDismissible: false,
-            context: context,
-            builder: (_) {
-              return BirthDatePickerDialog();
-            }
-          ).then((value) => commentCubit.setState(HoroscopeSelectableItem(horoscope: value!, isSelected: true)))
-        );
+                  barrierDismissible: false,
+                  context: context,
+                  builder: (_) {
+                    return BirthDatePickerDialog();
+                  })
+              .then((value) => commentCubit.setState(HoroscopeSelectableItem(
+                  horoscope: value!, isSelected: true))));
+    } else {
+      var horoscope =
+          HoroscopeUtil.horoscopeFromTimeMillis(user?.birthDate ?? 0);
+      commentCubit.setState(
+          HoroscopeSelectableItem(horoscope: horoscope, isSelected: true));
     }
-    else {
-      var horoscope = HoroscopeUtil.horoscopeFromTimeMillis(user?.birthDate?? 0);
-      commentCubit.setState(HoroscopeSelectableItem(horoscope: horoscope, isSelected: true));
-    }
-    
-   
   }
-  
+
   void dispose() {}
 }
