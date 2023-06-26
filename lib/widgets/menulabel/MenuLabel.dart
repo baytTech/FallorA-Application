@@ -36,7 +36,8 @@ class MenuLabel extends StatelessWidget {
               text: text.substring(1,text.length),
               style: TextStyle(fontSize: 20.0),
             )
-          ], style: font),
+          ], 
+            style: font),
           textAlign: TextAlign.center,
         ),
       ),

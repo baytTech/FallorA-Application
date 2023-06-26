@@ -16,7 +16,7 @@ class BirthDatePickerDialog extends StatefulWidget {
 class _BirthDatePickerDialogState extends State<BirthDatePickerDialog> {
   DateTime? selectedDate = DateTime.now();
   
-  DatePickerViewModel viewModel =  DatePickerViewModel(functionsRepo: getIt.get());
+  DatePickerViewModel viewModel =  DatePickerViewModel(functionsRepo: getIt(), authManager: getIt());
   get textStyle => GoogleFonts.nunito(fontSize: 17,fontWeight: FontWeight.w400,color: Colors.white70);
 
   get textStyleMini => GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w400,color: Colors.white70);
