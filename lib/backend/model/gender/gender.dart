@@ -2,13 +2,13 @@ enum Gender {
   Male(
     code: "male", 
     name: "erkek",
-    description: "Erkek",
+    description: "Erkeği",
     imagePath: "assets/images/genders/ic_male.png"
   ),
   Female(
     code:"female",
     name: "kadin",
-    description: "Kadın",
+    description: "Kadını",
     imagePath: "assets/images/genders/ic_female.png"
   );
 

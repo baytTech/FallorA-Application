@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:fallora/domain/model/generic_success_model.dart';
+import 'package:fallora/domain/model/success/generic_success_model.dart';
 import 'package:fallora/res/color.res.dart';
 import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
 import 'package:fallora/widgets/fallora_button.dart';

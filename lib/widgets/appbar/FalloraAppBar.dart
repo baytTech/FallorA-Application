@@ -12,23 +12,22 @@ import 'package:shimmer/shimmer.dart';
 import '../../backend/auth/auth.manager.dart';
 import '../../backend/model/user/user.dart';
 import '../../injection.dart';
-import 'package:fallora/modals/pages/inbox_page/inbox_page_widget.dart';
-
 import 'package:badges/badges.dart' as badges;
 
+// ignore: must_be_immutable
 class FalloraAppBar extends StatefulWidget implements PreferredSizeWidget {
   final Gradient? gradient;
   final bool isHome;
   final BuildContext context;
-  //shimmeringData
   bool shimmerEnabled;
   final int? shimmeringDurationAsSeconds;
-  FalloraAppBar(
-      {required this.context,
+  FalloraAppBar({
+    required this.context,
       this.gradient,
       required this.isHome,
       this.shimmerEnabled = false,
-      this.shimmeringDurationAsSeconds});
+      this.shimmeringDurationAsSeconds
+  });
 
   @override
   State<FalloraAppBar> createState() => _FalloraAppBarState();

@@ -20,12 +20,15 @@ class HoroscopeCommentaryModel extends FlutterFlowModel {
 
   String comment = "";
 
-  void initState(BuildContext context) {
+  void initState(BuildContext context) {}
+
+  void getData(Horoscope sign,Function? updateState) {
     EasyLoading.show(maskType: EasyLoadingMaskType.black);
-    repo.getHoroscopeReadings(Gender.Female.code, Horoscope.Gemini.code).then((value) {
+    repo.getHoroscopeReadings(Gender.Female.code, sign.code).then((value) {
         if(value.status == Status.SUCCESS) {   
           comment = value.data?.data ?? "";
         }  
+        updateState?.call();
         EasyLoading.dismiss();
     });
   }

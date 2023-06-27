@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:fallora/modals/pages/avatar_buy/avatar_buy_widget.dart';
-import 'package:fallora/domain/model/generic_success_model.dart';
+import 'package:fallora/domain/model/success/generic_success_model.dart';
 import 'package:fallora/pages/genetic_success/generic_success_screen.dart';
 import 'package:fallora/pages/otp_page/otp_page_widget.dart';
 import 'package:fallora/pages/success_page/success_page.dart';
@@ -122,7 +122,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HoroscopeCommentary',
           path: '/horoscopeCommentary',
-          builder: (context, params) => HoroscopeCommentaryWidget(),
+          builder: (context, params) {
+            var sign = params.state.extraMap["sign"];
+            return HoroscopeCommentaryWidget(sign: sign);
+          },
         ),
         FFRoute(
           name: 'HoroscopeCompatibility',
@@ -371,16 +374,7 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: Color(0xFF740097),
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/Fallora.png',
-                      width: MediaQuery.of(context).size.width * 0.75,
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
-                )
+              ? SplashScreenWidget()
               : page;
 
           final transitionInfo = state.transitionInfo;
