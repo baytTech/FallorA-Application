@@ -3,14 +3,15 @@ import 'package:fallora/backend/model/gender/gender_selectable.dart';
 import 'package:fallora/backend/model/horoscope/horoscope.dart';
 import 'package:fallora/backend/model/horoscope/horoscope_selectable.dart';
 import 'package:fallora/backend/repo/functions_repo.dart';
+import 'package:fallora/backend/util/date_util.dart';
 import 'package:fallora/backend/util/horoscope_util.dart';
+import 'package:fallora/flutter_flow/flutter_flow_model.dart';
 import 'package:fallora/pages/date_picker/date_picker_dialog.dart';
 import 'package:fallora/pages/horoscope_selection/cubit/comment.cubit.dart';
 import 'package:fallora/pages/horoscope_selection/seletable_items_controller.dart';
 import 'package:flutter/scheduler.dart';
-import '../../backend/util/date_util.dart';
-import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'cubit/relation.cubit.dart';
 
 class HoroscopeSectionModel extends FlutterFlowModel {
   DateTime date = DateTime.now();
@@ -24,10 +25,10 @@ class HoroscopeSectionModel extends FlutterFlowModel {
 
   final horoscopesController =
       SelectableItemController(HoroscopeSelectableItem.generate());
-  final dualController = DualSelectableItemController(
-      GenderSelectableItem.generate(), HoroscopeSelectableItem.generate());
+  final dualController1 = DualSelectableItemController(GenderSelectableItem.generate(), HoroscopeSelectableItem.generate());
+  final dualController2 = DualSelectableItemController(GenderSelectableItem.generate(), HoroscopeSelectableItem.generate());
   final commentCubit = HoroscopeCommentCubit();
-  final compatibilityCubit = HoroscopeCommentCubit();
+  final relationsCubit = HoroscopeRelationCubit();
 
   void initState(BuildContext context) {
     var user = authManager.userCubic.state;

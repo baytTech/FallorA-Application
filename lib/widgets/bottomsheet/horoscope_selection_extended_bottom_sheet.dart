@@ -4,7 +4,7 @@ import 'package:fallora/backend/model/gender/gender.dart';
 import 'package:fallora/backend/model/gender/gender_selectable.dart';
 import 'package:fallora/backend/model/horoscope/horoscope.dart';
 import 'package:fallora/backend/model/horoscope/horoscope_selectable.dart';
-import 'package:fallora/backend/util/dart_record.dart';
+import 'package:fallora/domain/model/record/dart_record.dart';
 import 'package:fallora/pages/horoscope_selection/seletable_items_controller.dart';
 import 'package:fallora/res/color.res.dart';
 import 'package:fallora/widgets/gender/GenderWidget.dart';
