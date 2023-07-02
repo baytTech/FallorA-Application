@@ -11,6 +11,7 @@ class User with _$User{
     required String fullName,
     required bool emailVerified,
     required double appPoint,
+    required
     int? birthDate,
     String? phoneNumber
   }) = _User;

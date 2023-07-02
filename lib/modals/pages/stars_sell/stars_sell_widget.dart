@@ -99,455 +99,147 @@ class _StarsSellWidgetState extends State<StarsSellWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 20.0, 20.0, 20.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 10.0),
-                                child: GridView(
-                                  padding: EdgeInsets.zero,
-                                  gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
-                                    crossAxisSpacing: 5.0,
-                                    mainAxisSpacing: 5.0,
-                                    childAspectRatio: 1.3,
-                                  ),
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.vertical,
-                                  children: [
-                                    Container(
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration(
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 4.0,
-                                            color: Colors.black,
-                                            offset: Offset(0.0, 3.0),
-                                          )
-                                        ],
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            Color(0xFFBE00FF),
-                                            Color(0xFF43003F)
-                                          ],
-                                          stops: [0.0, 1.0],
-                                          begin:
-                                              AlignmentDirectional(0.0, -1.0),
-                                          end: AlignmentDirectional(0, 1.0),
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(30.0),
+                          child: Expanded(
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.vertical,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 10.0),
+                                    child: GridView(
+                                      padding: EdgeInsets.zero,
+                                      gridDelegate:
+                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisCount: 2,
+                                        crossAxisSpacing: 5.0,
+                                        mainAxisSpacing: 5.0,
+                                        childAspectRatio: 1.3,
                                       ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Expanded(
-                                            child: Container(
-                                              width: double.infinity,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    Color(0xFF350047),
-                                                    Color(0xFF43003F)
-                                                  ],
-                                                  stops: [0.0, 1.0],
-                                                  begin: AlignmentDirectional(
-                                                      0.0, -1.0),
-                                                  end: AlignmentDirectional(
-                                                      0, 1.0),
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(30.0),
-                                              ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceAround,
-                                                children: [
-                                                  Image.asset(
-                                                    'assets/images/3stars.png',
-                                                    width: 100.0,
-                                                    height: 100.0,
-                                                    fit: BoxFit.fitWidth,
-                                                  ),
-                                                  RichText(
-                                                    text: TextSpan(
-                                                      children: [
-                                                        TextSpan(
-                                                          text: '3',
-                                                          style: TextStyle(
-                                                            fontSize: 30.0,
-                                                          ),
-                                                        ),
-                                                        TextSpan(
-                                                          text: '\n',
-                                                          style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.w300,
-                                                            fontSize: 22.0,
-                                                          ),
-                                                        ),
-                                                        TextSpan(
-                                                          text: 'Yıldız',
-                                                          style: TextStyle(
-                                                            fontSize: 22.0,
-                                                          ),
-                                                        )
-                                                      ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                color: Colors
-                                                                    .white,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                                lineHeight: 1.3,
-                                                              ),
-                                                    ),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                          Text(
-                                            '₺12',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily,
-                                                  color: Colors.white,
-                                                  fontSize: 30.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 4.0,
-                                            color: Colors.black,
-                                            offset: Offset(0.0, 3.0),
-                                          )
-                                        ],
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            Color(0xFFBE00FF),
-                                            Color(0xFF43003F)
-                                          ],
-                                          stops: [0.0, 1.0],
-                                          begin:
-                                              AlignmentDirectional(0.0, -1.0),
-                                          end: AlignmentDirectional(0, 1.0),
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(30.0),
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Expanded(
-                                            child: Container(
-                                              width: double.infinity,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    Color(0xFF350047),
-                                                    Color(0xFF43003F)
-                                                  ],
-                                                  stops: [0.0, 1.0],
-                                                  begin: AlignmentDirectional(
-                                                      0.0, -1.0),
-                                                  end: AlignmentDirectional(
-                                                      0, 1.0),
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(30.0),
-                                              ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceAround,
-                                                children: [
-                                                  Image.asset(
-                                                    'assets/images/5stars.png',
-                                                    width: 100.0,
-                                                    height: 100.0,
-                                                    fit: BoxFit.fitWidth,
-                                                  ),
-                                                  RichText(
-                                                    text: TextSpan(
-                                                      children: [
-                                                        TextSpan(
-                                                          text: '5',
-                                                          style: TextStyle(
-                                                            fontSize: 30.0,
-                                                          ),
-                                                        ),
-                                                        TextSpan(
-                                                          text: '\n',
-                                                          style: TextStyle(
-                                                            fontWeight:
-                                                                FontWeight.w300,
-                                                            fontSize: 22.0,
-                                                          ),
-                                                        ),
-                                                        TextSpan(
-                                                          text: 'Yıldız',
-                                                          style: TextStyle(
-                                                            fontSize: 22.0,
-                                                          ),
-                                                        )
-                                                      ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                color: Colors
-                                                                    .white,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                                lineHeight: 1.3,
-                                                              ),
-                                                    ),
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                          Text(
-                                            '₺15',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily,
-                                                  color: Colors.white,
-                                                  fontSize: 30.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Expanded(
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 173.0,
-                                  decoration: BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                        blurRadius: 4.0,
-                                        color: Colors.black,
-                                        offset: Offset(0.0, 3.0),
-                                      )
-                                    ],
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Color(0xFFBE00FF),
-                                        Color(0xFF43003F)
-                                      ],
-                                      stops: [0.0, 1.0],
-                                      begin: AlignmentDirectional(0.0, -1.0),
-                                      end: AlignmentDirectional(0, 1.0),
-                                    ),
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
+                                      shrinkWrap: true,
+                                      scrollDirection: Axis.vertical,
+                                      children: [
+                                        Container(
                                           width: double.infinity,
-                                          height: 100.0,
+                                          height: double.infinity,
                                           decoration: BoxDecoration(
                                             boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 4.0,
-                                                color: Color(0xA3000000),
-                                                offset: Offset(0.0, 4.0),
+                                                color: Colors.black,
+                                                offset: Offset(0.0, 3.0),
                                               )
                                             ],
                                             gradient: LinearGradient(
                                               colors: [
-                                                Color(0xFF9F00D5),
-                                                Color(0xFFFF00F0)
+                                                Color(0xFFBE00FF),
+                                                Color(0xFF43003F)
                                               ],
                                               stops: [0.0, 1.0],
-                                              begin: AlignmentDirectional(
-                                                  0.0, -1.0),
+                                              begin:
+                                                  AlignmentDirectional(0.0, -1.0),
                                               end: AlignmentDirectional(0, 1.0),
                                             ),
                                             borderRadius:
                                                 BorderRadius.circular(30.0),
                                           ),
-                                          child: Row(
+                                          child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceAround,
+                                                MainAxisAlignment.spaceEvenly,
                                             children: [
-                                              Container(
-                                                width: 100.0,
-                                                height: double.infinity,
-                                                decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.fitWidth,
-                                                    image: Image.asset(
-                                                      'assets/images/star.png',
-                                                    ).image,
+                                              Expanded(
+                                                child: Container(
+                                                  width: double.infinity,
+                                                  height: 100.0,
+                                                  decoration: BoxDecoration(
+                                                    gradient: LinearGradient(
+                                                      colors: [
+                                                        Color(0xFF350047),
+                                                        Color(0xFF43003F)
+                                                      ],
+                                                      stops: [0.0, 1.0],
+                                                      begin: AlignmentDirectional(
+                                                          0.0, -1.0),
+                                                      end: AlignmentDirectional(
+                                                          0, 1.0),
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(30.0),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisSize: MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceAround,
+                                                    children: [
+                                                      Image.asset(
+                                                        'assets/images/3stars.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.fitWidth,
+                                                      ),
+                                                      RichText(
+                                                        text: TextSpan(
+                                                          children: [
+                                                            TextSpan(
+                                                              text: '3',
+                                                              style: TextStyle(
+                                                                fontSize: 30.0,
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text: '\n',
+                                                              style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight.w300,
+                                                                fontSize: 22.0,
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text: 'Yıldız',
+                                                              style: TextStyle(
+                                                                fontSize: 22.0,
+                                                              ),
+                                                            )
+                                                          ],
+                                                          style:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumFamily,
+                                                                    color: Colors
+                                                                        .white,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context)
+                                                                                .bodyMediumFamily),
+                                                                    lineHeight: 1.3,
+                                                                  ),
+                                                        ),
+                                                        textAlign: TextAlign.center,
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.10000000000000009),
-                                                child: Text(
-                                                  '10',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMediumFamily,
-                                                        color: Colors.white,
-                                                        fontSize: 49.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                      ),
-                                                ),
                                               ),
-                                              RichText(
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: '10',
-                                                      style: TextStyle(
-                                                        fontSize: 46.0,
-                                                      ),
-                                                    ),
-                                                    TextSpan(
-                                                      text: '\n',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w300,
-                                                        fontSize: 22.0,
-                                                      ),
-                                                    ),
-                                                    TextSpan(
-                                                      text: 'Yıldız',
-                                                      style: TextStyle(
-                                                        fontSize: 22.0,
-                                                      ),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMediumFamily,
-                                                        color: Colors.white,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                        lineHeight: 1.3,
-                                                      ),
-                                                ),
+                                              Text(
+                                                '₺12',
                                                 textAlign: TextAlign.center,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 10.0, 10.0, 10.0),
-                                        child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
-                                          },
-                                          text: '₺25',
-                                          options: FFButtonOptions(
-                                            width: double.infinity,
-                                            height: 40.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: Color(0xFFD756FF),
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
+                                                style: FlutterFlowTheme.of(context)
+                                                    .bodyMedium
                                                     .override(
                                                       fontFamily:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleSmallFamily,
+                                                              .bodyMediumFamily,
                                                       color: Colors.white,
                                                       fontSize: 30.0,
                                                       useGoogleFonts: GoogleFonts
@@ -555,103 +247,310 @@ class _StarsSellWidgetState extends State<StarsSellWidget> {
                                                           .containsKey(
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleSmallFamily),
+                                                                  .bodyMediumFamily),
                                                     ),
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(840.0),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 10.0),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 173.0,
-                                    decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 4.0,
-                                          color: Colors.black,
-                                          offset: Offset(0.0, 3.0),
-                                        )
-                                      ],
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xFFBE00FF),
-                                          Color(0xFF43003F)
-                                        ],
-                                        stops: [0.0, 1.0],
-                                        begin: AlignmentDirectional(0.0, -1.0),
-                                        end: AlignmentDirectional(0, 1.0),
-                                      ),
-                                      borderRadius: BorderRadius.circular(30.0),
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Expanded(
-                                          child: Container(
-                                            width: double.infinity,
-                                            height: 100.0,
-                                            decoration: BoxDecoration(
-                                              gradient: LinearGradient(
-                                                colors: [
-                                                  Color(0xFF350047),
-                                                  Color(0xFF43003F)
-                                                ],
-                                                stops: [0.0, 1.0],
-                                                begin: AlignmentDirectional(
-                                                    0.0, -1.0),
-                                                end: AlignmentDirectional(
-                                                    0, 1.0),
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4.0,
+                                                color: Colors.black,
+                                                offset: Offset(0.0, 3.0),
+                                              )
+                                            ],
+                                            gradient: LinearGradient(
+                                              colors: [
+                                                Color(0xFFBE00FF),
+                                                Color(0xFF43003F)
+                                              ],
+                                              stops: [0.0, 1.0],
+                                              begin:
+                                                  AlignmentDirectional(0.0, -1.0),
+                                              end: AlignmentDirectional(0, 1.0),
                                             ),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.stretch,
-                                              children: [
-                                                Container(
+                                            borderRadius:
+                                                BorderRadius.circular(30.0),
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Expanded(
+                                                child: Container(
                                                   width: double.infinity,
-                                                  height: MediaQuery.of(context)
-                                                          .size
-                                                          .height *
-                                                      0.05,
+                                                  height: 100.0,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFF9F00D5),
+                                                    gradient: LinearGradient(
+                                                      colors: [
+                                                        Color(0xFF350047),
+                                                        Color(0xFF43003F)
+                                                      ],
+                                                      stops: [0.0, 1.0],
+                                                      begin: AlignmentDirectional(
+                                                          0.0, -1.0),
+                                                      end: AlignmentDirectional(
+                                                          0, 1.0),
+                                                    ),
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            20.0),
+                                                        BorderRadius.circular(30.0),
                                                   ),
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Text(
-                                                    'Siparişinizi özelleştirin',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
+                                                  child: Row(
+                                                    mainAxisSize: MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceAround,
+                                                    children: [
+                                                      Image.asset(
+                                                        'assets/images/5stars.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.fitWidth,
+                                                      ),
+                                                      RichText(
+                                                        text: TextSpan(
+                                                          children: [
+                                                            TextSpan(
+                                                              text: '5',
+                                                              style: TextStyle(
+                                                                fontSize: 30.0,
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text: '\n',
+                                                              style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight.w300,
+                                                                fontSize: 22.0,
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text: 'Yıldız',
+                                                              style: TextStyle(
+                                                                fontSize: 22.0,
+                                                              ),
+                                                            )
+                                                          ],
+                                                          style:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumFamily,
+                                                                    color: Colors
+                                                                        .white,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context)
+                                                                                .bodyMediumFamily),
+                                                                    lineHeight: 1.3,
+                                                                  ),
+                                                        ),
+                                                        textAlign: TextAlign.center,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              Text(
+                                                '₺15',
+                                                textAlign: TextAlign.center,
+                                                style: FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily,
+                                                      color: Colors.white,
+                                                      fontSize: 30.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily),
+                                                    ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 173.0,
+                                      decoration: BoxDecoration(
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4.0,
+                                            color: Colors.black,
+                                            offset: Offset(0.0, 3.0),
+                                          )
+                                        ],
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color(0xFFBE00FF),
+                                            Color(0xFF43003F)
+                                          ],
+                                          stops: [0.0, 1.0],
+                                          begin: AlignmentDirectional(0.0, -1.0),
+                                          end: AlignmentDirectional(0, 1.0),
+                                        ),
+                                        borderRadius: BorderRadius.circular(30.0),
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Expanded(
+                                            child: Container(
+                                              width: double.infinity,
+                                              height: 100.0,
+                                              decoration: BoxDecoration(
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 4.0,
+                                                    color: Color(0xA3000000),
+                                                    offset: Offset(0.0, 4.0),
+                                                  )
+                                                ],
+                                                gradient: LinearGradient(
+                                                  colors: [
+                                                    Color(0xFF9F00D5),
+                                                    Color(0xFFFF00F0)
+                                                  ],
+                                                  stops: [0.0, 1.0],
+                                                  begin: AlignmentDirectional(
+                                                      0.0, -1.0),
+                                                  end: AlignmentDirectional(0, 1.0),
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(30.0),
+                                              ),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceAround,
+                                                children: [
+                                                  Container(
+                                                    width: 100.0,
+                                                    height: double.infinity,
+                                                    decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                        fit: BoxFit.fitWidth,
+                                                        image: Image.asset(
+                                                          'assets/images/star.png',
+                                                        ).image,
+                                                      ),
+                                                    ),
+                                                    alignment: AlignmentDirectional(
+                                                        0.0, 0.10000000000000009),
+                                                    child: Text(
+                                                      '10',
+                                                      style: FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            color: Colors.white,
+                                                            fontSize: 49.0,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumFamily),
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  RichText(
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: '10',
+                                                          style: TextStyle(
+                                                            fontSize: 46.0,
+                                                          ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: '\n',
+                                                          style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.w300,
+                                                            fontSize: 22.0,
+                                                          ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: 'Yıldız',
+                                                          style: TextStyle(
+                                                            fontSize: 22.0,
+                                                          ),
+                                                        )
+                                                      ],
+                                                      style: FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                            color: Colors.white,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumFamily),
+                                                            lineHeight: 1.3,
+                                                          ),
+                                                    ),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                10.0, 10.0, 10.0, 10.0),
+                                            child: FFButtonWidget(
+                                              onPressed: () {
+                                                print('Button pressed ...');
+                                              },
+                                              text: '₺25',
+                                              options: FFButtonOptions(
+                                                width: double.infinity,
+                                                height: 40.0,
+                                                padding:
+                                                    EdgeInsetsDirectional.fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional.fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                color: Color(0xFFD756FF),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
                                                         .override(
                                                           fontFamily:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .bodyMediumFamily,
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           fontSize: 30.0,
                                                           useGoogleFonts: GoogleFonts
@@ -659,211 +558,317 @@ class _StarsSellWidgetState extends State<StarsSellWidget> {
                                                               .containsKey(
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMediumFamily),
+                                                                      .titleSmallFamily),
                                                         ),
-                                                  ),
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 1.0,
                                                 ),
-                                                Container(
-                                                  width:
-                                                  double.infinity,
-                                                  child:
-                                                  Slider.adaptive(
-                                                    activeColor:
-                                                    FlutterFlowTheme.of(
-                                                        context)
-                                                        .primary,
-                                                    inactiveColor:
-                                                    FlutterFlowTheme.of(
-                                                        context)
-                                                        .accent2,
-                                                    min: 11.0,
-                                                    max: 99.0,
-                                                    value: _model
-                                                        .sliderValue ??=
-                                                    11.0,
-                                                    label: _model
-                                                        .sliderValue
-                                                        .toString(),
-                                                    divisions: 88,
-                                                    onChanged:
-                                                        (newValue) {
-                                                      newValue = double
-                                                          .parse(newValue
-                                                          .toStringAsFixed(
-                                                          6));
-                                                      setState(() =>
-                                                      _model.sliderValue =
-                                                          newValue);
-                                                    },
+                                                borderRadius:
+                                                    BorderRadius.circular(840.0),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 10.0),
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 173.0,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4.0,
+                                              color: Colors.black,
+                                              offset: Offset(0.0, 3.0),
+                                            )
+                                          ],
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xFFBE00FF),
+                                              Color(0xFF43003F)
+                                            ],
+                                            stops: [0.0, 1.0],
+                                            begin: AlignmentDirectional(0.0, -1.0),
+                                            end: AlignmentDirectional(0, 1.0),
+                                          ),
+                                          borderRadius: BorderRadius.circular(30.0),
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Expanded(
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      Color(0xFF350047),
+                                                      Color(0xFF43003F)
+                                                    ],
+                                                    stops: [0.0, 1.0],
+                                                    begin: AlignmentDirectional(
+                                                        0.0, -1.0),
+                                                    end: AlignmentDirectional(
+                                                        0, 1.0),
                                                   ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(30.0),
                                                 ),
-                                                Row(
-                                                  crossAxisAlignment: CrossAxisAlignment.center ,
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
+                                                child: Column(
+                                                  mainAxisSize: MainAxisSize.max,
                                                   mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceAround,
+                                                      MainAxisAlignment.spaceBetween,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.stretch,
                                                   children: [
-                                                    Expanded(
-                                                      child: Container(
-                                                        width: double.infinity,
-                                                        height: 55.0,
-                                                        decoration:
-                                                        BoxDecoration(
-                                                          image:
-                                                          DecorationImage(
-                                                            fit: BoxFit.fitHeight,
-                                                            image: Image
-                                                                .asset(
-                                                              'assets/images/star.png',
-                                                            ).image,
-                                                          ),
-                                                        ),
-                                                        alignment: Alignment.center,
-                                                        child: Text(
-                                                          _model
-                                                              .sliderValue
-                                                              .toString(),
-                                                          style: FlutterFlowTheme.of(
-                                                              context)
-                                                              .bodyMedium
-                                                              .override(
-                                                            fontFamily:
-                                                            FlutterFlowTheme.of(context)
-                                                                .bodyMediumFamily,
-                                                            color: Colors
-                                                                .white,
-                                                            fontSize:
-                                                            20.0,
-                                                            useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                                .containsKey(
-                                                                FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                          ),
-                                                        ),
+                                                    Container(
+                                                      width: double.infinity,
+                                                      height: MediaQuery.of(context)
+                                                              .size
+                                                              .height *
+                                                          0.05,
+                                                      decoration: BoxDecoration(
+                                                        color: Color(0xFF9F00D5),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                                20.0),
+                                                      ),
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, 0.0),
+                                                      child: Text(
+                                                        'Siparişinizi özelleştirin',
+                                                        style: FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                              color: Colors.white,
+                                                              fontSize: 30.0,
+                                                              useGoogleFonts: GoogleFonts
+                                                                      .asMap()
+                                                                  .containsKey(
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMediumFamily),
+                                                            ),
                                                       ),
                                                     ),
-                                                    Expanded(
-                                                      child: RichText(
-                                                        text: TextSpan(
-                                                          children: [
-                                                            TextSpan(
-                                                              text: _model
-                                                                  .sliderValue?.toInt().toString(),
-                                                              style:
-                                                              TextStyle(
-                                                                fontSize:
-                                                                30.0,
+                                                    Container(
+                                                      width:
+                                                      double.infinity,
+                                                      child:
+                                                      Slider.adaptive(
+                                                        activeColor:
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .primary,
+                                                        inactiveColor:
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .accent2,
+                                                        min: 11.0,
+                                                        max: 99.0,
+                                                        value: _model
+                                                            .sliderValue ??=
+                                                        11.0,
+                                                        label: _model
+                                                            .sliderValue
+                                                            .toString(),
+                                                        divisions: 88,
+                                                        onChanged:
+                                                            (newValue) {
+                                                          newValue = double
+                                                              .parse(newValue
+                                                              .toStringAsFixed(
+                                                              6));
+                                                          setState(() =>
+                                                          _model.sliderValue =
+                                                              newValue);
+                                                        },
+                                                      ),
+                                                    ),
+                                                    Row(
+                                                      crossAxisAlignment: CrossAxisAlignment.center ,
+                                                      mainAxisSize:
+                                                      MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceAround,
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            width: double.infinity,
+                                                            height: 55.0,
+                                                            decoration:
+                                                            BoxDecoration(
+                                                              image:
+                                                              DecorationImage(
+                                                                fit: BoxFit.fitHeight,
+                                                                image: Image
+                                                                    .asset(
+                                                                  'assets/images/star.png',
+                                                                ).image,
                                                               ),
                                                             ),
-                                                            TextSpan(
-                                                              text: '\n',
-                                                              style:
-                                                              TextStyle(
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w300,
+                                                            alignment: Alignment.center,
+                                                            child: Text(
+                                                              _model
+                                                                  .sliderValue
+                                                                  .toString(),
+                                                              style: FlutterFlowTheme.of(
+                                                                  context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                fontFamily:
+                                                                FlutterFlowTheme.of(context)
+                                                                    .bodyMediumFamily,
+                                                                color: Colors
+                                                                    .white,
                                                                 fontSize:
-                                                                22.0,
+                                                                20.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                    .containsKey(
+                                                                    FlutterFlowTheme.of(context).bodyMediumFamily),
                                                               ),
                                                             ),
-                                                            TextSpan(
-                                                              text:
-                                                              'Yıldız',
-                                                              style:
-                                                              TextStyle(
-                                                                fontSize:
-                                                                22.0,
-                                                              ),
-                                                            )
-                                                          ],
-                                                          style: FlutterFlowTheme.of(
-                                                              context)
-                                                              .bodyMedium
-                                                              .override(
-                                                            fontFamily:
-                                                            FlutterFlowTheme.of(context)
-                                                                .bodyMediumFamily,
-                                                            color: Colors
-                                                                .white,
-                                                            useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                                .containsKey(
-                                                                FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                            lineHeight:
-                                                            1.3,
                                                           ),
                                                         ),
-                                                        textAlign:
-                                                        TextAlign
-                                                            .center,
-                                                      ),
+                                                        Expanded(
+                                                          child: RichText(
+                                                            text: TextSpan(
+                                                              children: [
+                                                                TextSpan(
+                                                                  text: _model
+                                                                      .sliderValue?.toInt().toString(),
+                                                                  style:
+                                                                  TextStyle(
+                                                                    fontSize:
+                                                                    30.0,
+                                                                  ),
+                                                                ),
+                                                                TextSpan(
+                                                                  text: '\n',
+                                                                  style:
+                                                                  TextStyle(
+                                                                    fontWeight:
+                                                                    FontWeight
+                                                                        .w300,
+                                                                    fontSize:
+                                                                    22.0,
+                                                                  ),
+                                                                ),
+                                                                TextSpan(
+                                                                  text:
+                                                                  'Yıldız',
+                                                                  style:
+                                                                  TextStyle(
+                                                                    fontSize:
+                                                                    22.0,
+                                                                  ),
+                                                                )
+                                                              ],
+                                                              style: FlutterFlowTheme.of(
+                                                                  context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                fontFamily:
+                                                                FlutterFlowTheme.of(context)
+                                                                    .bodyMediumFamily,
+                                                                color: Colors
+                                                                    .white,
+                                                                useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                    .containsKey(
+                                                                    FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                lineHeight:
+                                                                1.3,
+                                                              ),
+                                                            ),
+                                                            textAlign:
+                                                            TextAlign
+                                                                .center,
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ],
                                                 ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 10.0, 10.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: valueOrDefault<String>(
-                                              formatNumber(
-                                                _model.sliderValue! * 2,
-                                                formatType: FormatType.custom,
-                                                currency: '₺',
-                                                format: '#.##',
-                                                locale: 'tr_TR',
                                               ),
-                                              '0',
                                             ),
-                                            options: FFButtonOptions(
-                                              width: double.infinity,
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0xFFD756FF),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmallFamily,
-                                                        color: Colors.white,
-                                                        fontSize: 30.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
+                                            Padding(
+                                              padding:
+                                                  EdgeInsetsDirectional.fromSTEB(
+                                                      10.0, 0.0, 10.0, 10.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () {
+                                                  print('Button pressed ...');
+                                                },
+                                                text: valueOrDefault<String>(
+                                                  formatNumber(
+                                                    _model.sliderValue! * 2,
+                                                    formatType: FormatType.custom,
+                                                    currency: '₺',
+                                                    format: '#.##',
+                                                    locale: 'tr_TR',
+                                                  ),
+                                                  '0',
+                                                ),
+                                                options: FFButtonOptions(
+                                                  width: double.infinity,
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding: EdgeInsetsDirectional
+                                                      .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                  color: Color(0xFFD756FF),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmallFamily),
-                                                      ),
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
+                                                                    .titleSmallFamily,
+                                                            color: Colors.white,
+                                                            fontSize: 30.0,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallFamily),
+                                                          ),
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(840.0),
+                                                ),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(840.0),
                                             ),
-                                          ),
+                                          ],
                                         ),
-                                      ],
+                                      ),
                                     ),
                                   ),
-                                ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
                       ),

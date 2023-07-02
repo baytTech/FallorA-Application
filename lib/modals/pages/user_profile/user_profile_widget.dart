@@ -1,7 +1,14 @@
 import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
+import 'package:fallora/backend/util/horoscope_util.dart';
+import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
 import 'package:fallora/widgets/userprofilewidget/auth_user_stream_widget.dart';
 import 'package:flip_card/flip_card.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../backend/auth/auth.manager.dart';
+import '../../../backend/auth/user.cubit.dart';
+import '../../../backend/model/user/user.dart';
+import '../../../injection.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -21,6 +28,7 @@ class UserProfileWidget extends StatefulWidget {
 
 class _UserProfileWidgetState extends State<UserProfileWidget> {
   late UserProfileModel _model;
+  late AuthManager authManager = getIt<AuthManager>();
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -274,26 +282,36 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => Text(
-                                        "currentUserDisplayName",
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .override(
-                                              fontFamily: 'Playfair Display',
-                                              color: Colors.white,
-                                              fontSize: 24.0,
-                                              fontWeight: FontWeight.bold,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displaySmallFamily),
+                                    child: BlocBuilder<UserCubic, User?>(
+                                        bloc: authManager.userCubic,
+                                        builder: (context, state) {
+                                          if (state == null) return Container();
+                                          return Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    3.0, 0.0, 10.0, 5.0),
+                                            child: Center(
+                                              child: Text(
+                                                "${state.fullName}",
+                                                maxLines: 1,
+                                                style:
+                                          FlutterFlowTheme.of(context)
+                                              .displaySmall
+                                              .override(
+                                          fontFamily: 'Playfair Display',
+                                          color: Colors.white,
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.bold,
+                                          useGoogleFonts: GoogleFonts
+                                              .asMap()
+                                              .containsKey(
+                                          FlutterFlowTheme.of(
+                                          context)
+                                              .displaySmallFamily),
+                                              ),
                                             ),
-                                      ),
-                                    ),
+                                          ),);
+                                        }),
                                   ),
                                 ),
                               ],
@@ -308,21 +326,22 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
-                                      child: Text(
-                                        '[Zodiac Sign]',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Playfair Display',
-                                              color: Colors.white,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmallFamily),
-                                            ),
-                                      ),
+                                      child: BlocBuilder<UserCubic, User?>(
+                                          bloc: authManager.userCubic,
+                                          builder: (context, state) {
+                                            if (state == null) return Container();
+                                            return Padding(
+                                              padding: EdgeInsetsDirectional.fromSTEB(
+                                                  3.0, 0.0, 10.0, 5.0),
+                                              child:
+                                              Text("${HoroscopeUtil.horoscopeFromTimeMillis(state.birthDate!).description}",
+                                                  maxLines: 1,
+                                                  style: GoogleFonts.playfairDisplay(
+                                                    color: Colors.white,
+                                                    fontSize: 18,
+                                                  )),
+                                            );
+                                          }),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -529,7 +548,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              30.0, 0.0, 30.0, 0.0),
+                              30.0, 0.0, 30.0, 20.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               GoRouter.of(context).prepareAuthEvent();
@@ -547,60 +566,6 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).secondary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Noto Sans',
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    letterSpacing: 2.0,
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodySmallFamily),
-                                  ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 0.0,
-                              ),
-                              borderRadius: BorderRadius.circular(0.0),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 20.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              30.0, 0.0, 30.0, 0.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              GoRouter.of(context).prepareAuthEvent();
-                              //await authManager.signOut();
-                              GoRouter.of(context).clearRedirectLocation();
-
-                              context.goNamedAuth('LoginPage', mounted);
-                            },
-                            text: 'HESAP SİL',
-                            options: FFButtonOptions(
-                              width: double.infinity,
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
