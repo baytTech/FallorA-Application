@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:fallora/modals/pages/avatar_buy/avatar_buy_widget.dart';
+import 'package:fallora/domain/model/success/generic_success_model.dart';
+import 'package:fallora/pages/genetic_success/generic_success_screen.dart';
 import 'package:fallora/pages/otp_page/otp_page_widget.dart';
 import 'package:fallora/pages/success_page/success_page.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +71,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             path: '/',
             builder: (context, _) => appStateNotifier.loggedIn
                 ? HomePageWidget()
-                : LoginPageWidget()),
+                : LoginPageWidget()
+        ),
+        FFRoute(
+            name: "GenericSuccessScreen",
+            path: "/GenericSuccessScreen",
+            builder: (_, __) => GenericSuccessScreen(pageModel: GenericSuccessModel.forTarot())
+        ),
         FFRoute(
             name: "SuccessPage",
             path: "/SuccessPage",
@@ -85,11 +94,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               var email = params.state.extraMap["email"];
               return OtpPageWidget(email: email.toString());
             }),
-        FFRoute(
-          name: 'MainPage',
-          path: '/mainPage',
-          builder: (context, params) => MainPageWidget(),
-        ),
         FFRoute(
           name: 'LoginPage',
           path: '/loginPage',
@@ -118,12 +122,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HoroscopeCommentary',
           path: '/horoscopeCommentary',
-          builder: (context, params) => HoroscopeCommentaryWidget(),
+          builder: (context, params) {
+            var sign = params.state.extraMap["sign"];
+            return HoroscopeCommentaryWidget(sign: sign);
+          },
         ),
         FFRoute(
           name: 'HoroscopeCompatibility',
           path: '/horoscopeCompatibility',
-          builder: (context, params) => HoroscopeCompatibilityWidget(),
+          builder: (context, params) {
+            var param1= params.state.extraMap["param1"];
+            var param2= params.state.extraMap["param2"];
+            return HoroscopeCompatibilityWidget(
+              param1: param1,
+              param2: param2,
+            );
+          },
         ),
         FFRoute(
           name: 'CoffeeTelling',
@@ -180,7 +194,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AvatarBuy',
           path: '/avatarBuy',
-          builder: (context, params) => AvatarBuyWidget(),
+          builder: (context, params) => MyAvatarsPage(),
         ),
         FFRoute(
           name: 'DrinkBehalf',
@@ -367,16 +381,7 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: Color(0xFF740097),
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/Fallora.png',
-                      width: MediaQuery.of(context).size.width * 0.75,
-                      fit: BoxFit.fitWidth,
-                    ),
-                  ),
-                )
+              ? SplashScreenWidget()
               : page;
 
           final transitionInfo = state.transitionInfo;

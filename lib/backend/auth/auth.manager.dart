@@ -60,4 +60,11 @@ class AuthManager {
   void dispose() {
     tokenStreamController.close();
   }
+  
+  void updateUser() async {
+    var response = await functionsRepo.profile();
+    if(response.status == Status.SUCCESS) {
+      userCubic.updateState(response.data);
+    }
+  }
 }

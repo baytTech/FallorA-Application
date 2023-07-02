@@ -1,6 +1,8 @@
+import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
 import 'package:fallora/backend/util/horoscope_util.dart';
 import 'package:fallora/widgets/appbar/FalloraAppBar.dart';
 import 'package:fallora/widgets/userprofilewidget/auth_user_stream_widget.dart';
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../backend/auth/auth.manager.dart';
@@ -11,13 +13,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:badges/badges.dart' as badges;
-import 'package:flip_card/flip_card.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'user_profile_model.dart';
 export 'user_profile_model.dart';
 
@@ -452,21 +450,26 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Avatarlarım',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Playfair Display',
-                                              color: Colors.white,
-                                              fontSize: 20.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
+                                      child: InkWell(
+                                        onTap: () {
+                                          context.pushNamed('AvatarBuy');
+                                        },
+                                        child: Text(
+                                          'Avatarlarım',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Playfair Display',
+                                                color: Colors.white,
+                                                fontSize: 20.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
+                                        ),
                                       ),
                                     ),
                                   ],
