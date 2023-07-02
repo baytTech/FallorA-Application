@@ -130,7 +130,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HoroscopeCompatibility',
           path: '/horoscopeCompatibility',
-          builder: (context, params) => HoroscopeCompatibilityWidget(),
+          builder: (context, params) {
+            var param1= params.state.extraMap["param1"];
+            var param2= params.state.extraMap["param2"];
+            return HoroscopeCompatibilityWidget(
+              param1: param1,
+              param2: param2,
+            );
+          },
         ),
         FFRoute(
           name: 'CoffeeTelling',

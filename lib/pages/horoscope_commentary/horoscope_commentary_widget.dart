@@ -171,65 +171,64 @@ class _HoroscopeCommentaryWidgetState extends State<HoroscopeCommentaryWidget> {
                       ),
                     ],
                   ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-                                child: Container(
-                                  width: MediaQuery.of(context).size.width *0.11,
-                                  height: MediaQuery.of(context).size.height *0.05,
-                                  decoration: BoxDecoration(),
-                                  child: FFButtonWidget(
-                                    onPressed: () {print('Button pressed ...'); },
-                                    text: '',
-                                    icon: Icon(
-                                      Icons.share_rounded,
-                                      size: 15.0,
-                                    ),
-                                    options: FFButtonOptions(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      padding: EdgeInsetsDirectional.zero,
-                                      iconPadding: EdgeInsetsDirectional.zero,
-                                      color: Color(0xFF212121),
-                                      elevation: 2.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius:BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-1.0, 0.0),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width *0.11,
+                            height: MediaQuery.of(context).size.height *0.05,
+                            decoration: BoxDecoration(),
+                            child: FFButtonWidget(
+                              onPressed: () {print('Button pressed ...'); },
+                              text: '',
+                              icon: Icon(
+                                Icons.share_rounded,
+                                size: 15.0,
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                child: Container(
-                                  width: MediaQuery.of(context).size.width *0.11,
-                                  height: MediaQuery.of(context).size.height *0.05,
-                                  decoration: BoxDecoration(),
-                                  child: FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Aa',
-                                    options: FFButtonOptions(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      padding: EdgeInsetsDirectional.zero,
-                                      iconPadding: EdgeInsetsDirectional.zero,
-                                      color: Color(0xFF212121),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Playfair Display',
+                              options: FFButtonOptions(
+                                width: 50.0,
+                                height: 50.0,
+                                padding: EdgeInsetsDirectional.zero,
+                                iconPadding: EdgeInsetsDirectional.zero,
+                                color: Color(0xFF212121),
+                                elevation: 2.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius:BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width *0.11,
+                            height: MediaQuery.of(context).size.height *0.05,
+                            decoration: BoxDecoration(),
+                            child: FFButtonWidget(
+                              onPressed: () {
+                                print('Button pressed ...');
+                              },
+                              text: 'Aa',
+                              options: FFButtonOptions(
+                                width: 50.0,
+                                height: 50.0,
+                                padding: EdgeInsetsDirectional.zero,
+                                iconPadding: EdgeInsetsDirectional.zero,
+                                color: Color(0xFF212121),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall.override(
+                                      fontFamily: 'Playfair Display',
                                             color: Colors.white,
                                             fontSize: 24.0,
                                           ),
@@ -286,6 +285,7 @@ class _HoroscopeCommentaryWidgetState extends State<HoroscopeCommentaryWidget> {
                           ),
                         ),
                       ),
+                   
                     ],
                   ),
                 ),
