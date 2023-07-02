@@ -4,6 +4,7 @@ import 'package:fallora/backend/model/gender/gender.dart';
 import 'package:fallora/backend/model/gender/gender_selectable.dart';
 import 'package:fallora/backend/model/horoscope/horoscope.dart';
 import 'package:fallora/backend/model/horoscope/horoscope_selectable.dart';
+import 'package:fallora/domain/model/record/dart_record.dart';
 import 'package:fallora/injection.dart';
 import 'package:fallora/pages/horoscope_selection/cubit/comment.cubit.dart';
 import 'package:fallora/pages/horoscope_selection/cubit/relation.cubit.dart';
@@ -197,7 +198,7 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                   Spacer(),
                                   FalloraButton(
                                     onPressed: () =>  
-                                      GoRouter.of(context).go("/horoscopeCommentary", extra: {"sign": state?.horoscope}),
+                                      GoRouter.of(context).pushNamed("HoroscopeCommentary", extra: {"sign": state?.horoscope}),
                                     title: 'Devamını Oku',
                                   ),
                                   Spacer(),
@@ -303,7 +304,22 @@ class _HoroscopeSectionWidgetState extends State<HoroscopeSectionWidget> {
                                 Spacer(),
                                 FalloraButton(
                                   title: "Devamını Oku",
-                                  onPressed: () =>  context.pushNamed('HoroscopeCommentary'),
+                                  enabled: state.prop1 !=null && state.prop2 != null,
+                                  onPressed: () =>  
+                                    GoRouter.of(context).pushNamed(
+                                      "HoroscopeCompatibility",
+                                      extra: {
+                                        "param1": 
+                                        DartRecord(
+                                          (state.prop1?.param1 as GenderSelectableItem).gender,
+                                          (state.prop1?.param2 as HoroscopeSelectableItem).horoscope
+                                        ),
+                                        "param2": DartRecord(
+                                          (state.prop2?.param1 as GenderSelectableItem).gender,
+                                          (state.prop2?.param2 as HoroscopeSelectableItem).horoscope
+                                        )
+                                      }
+                                    ),
                                 ),
                                 Spacer()
                               ],

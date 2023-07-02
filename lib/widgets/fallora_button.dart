@@ -1,4 +1,3 @@
-import 'package:fallora/flutter_flow/flutter_flow_theme.dart';
 import 'package:fallora/res/color.res.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,21 +23,17 @@ class FalloraButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FFButtonWidget(
-      onPressed: onPressed,
+      onPressed: enabled ? onPressed : null,
       text: title.toString(),
       options: FFButtonOptions(
         width: width,
         height: height,
-        color: enabled ? AppColors.secondaryColor : AppColors.secondaryColor.withOpacity(0.3) ,
-        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-          fontFamily: 'Lexend Deca',
-          color: Colors.white,
+        color: enabled ? AppColors.secondaryColor :  AppColors.secondaryColor.withOpacity(0.4),
+        textStyle: GoogleFonts.lexendDeca(
+          color: enabled ? Colors.white : Colors.white70,
           fontSize: 16.0,
-          fontWeight: FontWeight.normal,
-          useGoogleFonts: GoogleFonts.asMap()
-            .containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
         ),
-        elevation: 3.0,
+        elevation: enabled ? 3.0 : 0,
         borderSide: BorderSide(
           color: Colors.transparent,
           width: 1.0,
