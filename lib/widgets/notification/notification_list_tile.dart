@@ -5,7 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class NotificationListTile extends StatelessWidget {
 
-  const NotificationListTile({super.key});
+final String title;
+final String date;
+final String description;
+
+
+  const NotificationListTile({super.key, required this.title, required this. description, required this.date});
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +46,7 @@ class NotificationListTile extends StatelessWidget {
                   ),
                   SizedBox(width: 8),
                   Text(
+                    title ??
                     "Kahve Falınız Hazır!",
                     style: GoogleFonts.poppins(
                       color: Colors.white70,
@@ -49,6 +55,7 @@ class NotificationListTile extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
+                    date ??
                     'Mar 8, 2022',
                     style: GoogleFonts.outfit(
                       color: Color(0xFFB8B8B8),
@@ -61,6 +68,7 @@ class NotificationListTile extends StatelessWidget {
             Padding(
               padding: EdgeInsetsDirectional.only(bottom: 10,start: 8),
               child: Text(
+                description ??
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into",
                 maxLines: 2,
                 softWrap: true,

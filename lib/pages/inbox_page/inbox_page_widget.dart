@@ -59,10 +59,10 @@ class _InboxPageWidgetState extends State<InboxPageWidget> {
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   children: [
-                    NotificationListTile(),
-                    NotificationListTile(),
-                    NotificationListTile(),
-                    NotificationListTile()
+                    NotificationListTile(date: "123", title: "123", description: "123",),
+                    NotificationListTile(date: "123", title: "123", description: "123",),
+                    NotificationListTile(date: "123", title: "123", description: "123",),
+                    NotificationListTile(date: "123", title: "123", description: "123",),
                   ],
                 ),
               ),

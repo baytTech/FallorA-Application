@@ -156,7 +156,7 @@ class _FalloraAppBarState extends State<FalloraAppBar> {
                       )
                     : IconButton(
                         onPressed: () {
-                          context.safePop();
+                          GoRouter.of(context).go('/inboxPage');
                         },
                         icon: Icon(
                           Icons.arrow_back,
